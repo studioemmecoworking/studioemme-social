@@ -1,0 +1,265 @@
+[
+  {
+    "id": "2026-12-22",
+    "data": "2026-12-22",
+    "linea": "Vita dello studio",
+    "formato": "foto",
+    "tema": "Auguri di buone feste da Studio Emme",
+    "materiale": [],
+    "prezzo": false,
+    "note": "Non conosci le date di chiusura: non inventarle, scrivi un augurio senza orari e chiedi le chiusure in note_per_utente."
+  },
+  {
+    "id": "2026-12-30",
+    "data": "2026-12-30",
+    "linea": "Come funziona",
+    "formato": "carosello",
+    "tema": "Dal primo contatto alla prima giornata: i 4 passi per iniziare",
+    "materiale": [],
+    "prezzo": true,
+    "note": ""
+  },
+  {
+    "id": "2027-01-05",
+    "data": "2027-01-05",
+    "linea": "Disponibilità",
+    "formato": "carosello",
+    "tema": "Nuovo anno, nuove agende: le mezze giornate libere di gennaio",
+    "materiale": [
+      "M13"
+    ],
+    "prezzo": false,
+    "note": "Leggi la tabella delle disponibilità nell'immagine e riporta solo ciò che si vede; se non è chiaro scrivilo in note_per_utente."
+  },
+  {
+    "id": "2027-01-08",
+    "data": "2027-01-08",
+    "linea": "Gli spazi",
+    "formato": "carosello",
+    "tema": "Studio 3 nel dettaglio: lettino elettrico professionale, due finestroni, climatizzazione",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-01-12",
+    "data": "2027-01-12",
+    "linea": "Per chi è",
+    "formato": "carosello",
+    "tema": "Fisioterapisti, osteopati, massaggiatori: tutto pronto per lavorare con il lettino",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-01-15",
+    "data": "2027-01-15",
+    "linea": "Vita dello studio",
+    "formato": "reel",
+    "tema": "Lo studio in 30 secondi",
+    "materiale": [
+      "M3"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-01-19",
+    "data": "2027-01-19",
+    "linea": "Come funziona",
+    "formato": "carosello",
+    "tema": "Il contratto semestrale spiegato semplice",
+    "materiale": [],
+    "prezzo": true,
+    "note": ""
+  },
+  {
+    "id": "2027-01-22",
+    "data": "2027-01-22",
+    "linea": "Gli spazi",
+    "formato": "carosello",
+    "tema": "Studio 1: raccolto, una finestra, lavabo in stanza, arredato e climatizzato",
+    "materiale": [
+      "M6"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-01-26",
+    "data": "2027-01-26",
+    "linea": "Per chi è",
+    "formato": "carosello",
+    "tema": "Psicologi e consulenze: una stanza tranquilla per ricevere",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-01-29",
+    "data": "2027-01-29",
+    "linea": "Vita dello studio",
+    "formato": "reel",
+    "tema": "Perché ho creato Studio Emme (video parlato)",
+    "materiale": [
+      "M16"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-02-02",
+    "data": "2027-02-02",
+    "linea": "Disponibilità",
+    "formato": "carosello",
+    "tema": "Mezze giornate libere di febbraio",
+    "materiale": [
+      "M13"
+    ],
+    "prezzo": false,
+    "note": "Leggi la tabella delle disponibilità nell'immagine e riporta solo ciò che si vede."
+  },
+  {
+    "id": "2027-02-05",
+    "data": "2027-02-05",
+    "linea": "La zona",
+    "formato": "carosello",
+    "tema": "Come arrivare: stazione a 600 m a piedi e parcheggio in zona",
+    "materiale": [
+      "M4"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-02-09",
+    "data": "2027-02-09",
+    "linea": "Come funziona",
+    "formato": "carosello",
+    "tema": "5 domande frequenti: orari, lettino, pulizia, una sola giornata, durata",
+    "materiale": [],
+    "prezzo": true,
+    "note": ""
+  },
+  {
+    "id": "2027-02-12",
+    "data": "2027-02-12",
+    "linea": "La zona",
+    "formato": "reel",
+    "tema": "Dalla stazione allo studio in 600 metri",
+    "materiale": [
+      "M4"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-02-16",
+    "data": "2027-02-16",
+    "linea": "Per chi è",
+    "formato": "carosello",
+    "tema": "Ostetriche e altre professioni della salute",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-02-19",
+    "data": "2027-02-19",
+    "linea": "Gli spazi",
+    "formato": "carosello",
+    "tema": "La sala d'attesa condivisa",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-02-23",
+    "data": "2027-02-23",
+    "linea": "Vita dello studio",
+    "formato": "foto",
+    "tema": "Un dettaglio del mese: luce, piante, ordine",
+    "materiale": [
+      "M7"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-02-26",
+    "data": "2027-02-26",
+    "linea": "Come funziona",
+    "formato": "carosello",
+    "tema": "Orari flessibili: tre giornate tipo, dal mattino presto alla sera tardi",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-03-02",
+    "data": "2027-03-02",
+    "linea": "Disponibilità",
+    "formato": "carosello",
+    "tema": "Mezze giornate libere di marzo",
+    "materiale": [
+      "M13"
+    ],
+    "prezzo": false,
+    "note": "Leggi la tabella delle disponibilità nell'immagine e riporta solo ciò che si vede."
+  },
+  {
+    "id": "2027-03-05",
+    "data": "2027-03-05",
+    "linea": "Vita dello studio",
+    "formato": "reel",
+    "tema": "Come si prepara una stanza prima di iniziare",
+    "materiale": [
+      "M12"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-03-09",
+    "data": "2027-03-09",
+    "linea": "Per chi è",
+    "formato": "carosello",
+    "tema": "Medici per consulenze: una stanza pronta quando serve",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-03-12",
+    "data": "2027-03-12",
+    "linea": "Gli spazi",
+    "formato": "carosello",
+    "tema": "Lo studio in primavera: luce naturale a ogni ora",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-03-16",
+    "data": "2027-03-16",
+    "linea": "Vita dello studio",
+    "formato": "carosello",
+    "tema": "Cosa dicono i professionisti che lavorano qui",
+    "materiale": [
+      "M11"
+    ],
+    "prezzo": false,
+    "note": "Usa solo le frasi leggibili nel materiale, senza nomi; se non ci sono frasi chiare scrivilo in note_per_utente.",
+    "persone_ok": false
+  },
+  {
+    "id": "2027-03-19",
+    "data": "2027-03-19",
+    "linea": "Come funziona",
+    "formato": "carosello",
+    "tema": "Vieni a vedere lo studio: come prenotare una visita",
+    "materiale": [],
+    "prezzo": true,
+    "note": ""
+  }
+]

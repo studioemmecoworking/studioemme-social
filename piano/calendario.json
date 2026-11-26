@@ -14,7 +14,7 @@
     "data": "2026-12-30",
     "linea": "Come funziona",
     "formato": "carosello",
-    "tema": "Dal primo contatto alla prima giornata: i 4 passi per iniziare",
+    "tema": "Dal primo contatto alla prima giornata: i 4 passi, fino all'appuntamento per visitare lo studio senza impegno",
     "materiale": [],
     "prezzo": true,
     "note": ""
@@ -24,12 +24,12 @@
     "data": "2027-01-05",
     "linea": "Disponibilità",
     "formato": "carosello",
-    "tema": "Nuovo anno, nuove agende: le mezze giornate libere di gennaio",
+    "tema": "Nuovo anno, nuove agende: ultime mezze giornate disponibili a gennaio",
     "materiale": [
       "M13"
     ],
     "prezzo": false,
-    "note": "Leggi la tabella delle disponibilità nell'immagine e riporta solo ciò che si vede; se non è chiaro scrivilo in note_per_utente."
+    "note": "Formula in positivo. Non mostrare nomi o dati di altri professionisti. Riporta solo ciò che si legge nel materiale; se non è chiaro scrivilo in note_per_utente."
   },
   {
     "id": "2027-01-08",
@@ -88,12 +88,15 @@
   {
     "id": "2027-01-26",
     "data": "2027-01-26",
-    "linea": "Per chi è",
+    "linea": "Vita dello studio",
     "formato": "carosello",
-    "tema": "Psicologi e consulenze: una stanza tranquilla per ricevere",
-    "materiale": [],
+    "tema": "Cosa dicono i professionisti che lavorano qui",
+    "materiale": [
+      "M11"
+    ],
     "prezzo": false,
-    "note": ""
+    "note": "Usa solo le frasi leggibili nel materiale. Nome e ruolo solo se compaiono con il consenso; altrimenti scrivi solo il ruolo. Se non ci sono frasi chiare scrivilo in note_per_utente.",
+    "persone_ok": true
   },
   {
     "id": "2027-01-29",
@@ -110,14 +113,14 @@
   {
     "id": "2027-02-02",
     "data": "2027-02-02",
-    "linea": "Disponibilità",
-    "formato": "carosello",
-    "tema": "Mezze giornate libere di febbraio",
+    "linea": "Gli spazi",
+    "formato": "reel",
+    "tema": "Studio 3: il lettino elettrico professionale in movimento",
     "materiale": [
-      "M13"
+      "M5"
     ],
     "prezzo": false,
-    "note": "Leggi la tabella delle disponibilità nell'immagine e riporta solo ciò che si vede."
+    "note": ""
   },
   {
     "id": "2027-02-05",
@@ -136,7 +139,7 @@
     "data": "2027-02-09",
     "linea": "Come funziona",
     "formato": "carosello",
-    "tema": "5 domande frequenti: orari, lettino, pulizia, una sola giornata, durata",
+    "tema": "5 domande frequenti: riservatezza (porte insonorizzate e radio in sala d'attesa), orari, lettino, pulizia, una sola giornata",
     "materiale": [],
     "prezzo": true,
     "note": ""
@@ -158,7 +161,7 @@
     "data": "2027-02-16",
     "linea": "Per chi è",
     "formato": "carosello",
-    "tema": "Ostetriche e altre professioni della salute",
+    "tema": "Psicologi, ostetriche e altre professioni della salute: una stanza tranquilla per ricevere",
     "materiale": [],
     "prezzo": false,
     "note": ""
@@ -168,7 +171,7 @@
     "data": "2027-02-19",
     "linea": "Gli spazi",
     "formato": "carosello",
-    "tema": "La sala d'attesa condivisa",
+    "tema": "La sala d'attesa condivisa: riservatezza e accoglienza (porte insonorizzate, radio che copre le voci)",
     "materiale": [],
     "prezzo": false,
     "note": ""
@@ -198,14 +201,15 @@
   {
     "id": "2027-03-02",
     "data": "2027-03-02",
-    "linea": "Disponibilità",
+    "linea": "Vita dello studio",
     "formato": "carosello",
-    "tema": "Mezze giornate libere di marzo",
+    "tema": "Due nutrizionisti, un solo studio: come lavoriamo insieme senza farci concorrenza",
     "materiale": [
-      "M13"
+      "M17"
     ],
     "prezzo": false,
-    "note": "Leggi la tabella delle disponibilità nell'immagine e riporta solo ciò che si vede."
+    "note": "Parla in modo naturale, nessuna promessa sanitaria; non inventare dettagli sulla collaborazione oltre a quelli del brief.",
+    "persone_ok": true
   },
   {
     "id": "2027-03-05",
@@ -243,14 +247,14 @@
     "id": "2027-03-16",
     "data": "2027-03-16",
     "linea": "Vita dello studio",
-    "formato": "carosello",
-    "tema": "Cosa dicono i professionisti che lavorano qui",
+    "formato": "reel",
+    "tema": "Due nutrizionisti nello stesso studio (video parlato)",
     "materiale": [
-      "M11"
+      "M18"
     ],
     "prezzo": false,
-    "note": "Usa solo le frasi leggibili nel materiale, senza nomi; se non ci sono frasi chiare scrivilo in note_per_utente.",
-    "persone_ok": false
+    "note": "",
+    "persone_ok": true
   },
   {
     "id": "2027-03-19",

@@ -46,5 +46,13 @@
   "M14": {
     "nome": "Logo con sfondo trasparente (PNG)",
     "come": "Facoltativo: se non c'è uso il logo attuale."
+  },
+  "M17": {
+    "nome": "Foto tua e di Cristiana in studio",
+    "come": "3-5 foto, anche mentre lavorate o prendete un caffè in sala d'attesa; luce naturale, inquadrature naturali (non in posa rigida)."
+  },
+  "M18": {
+    "nome": "Video parlato \"Due nutrizionisti nello stesso studio\"",
+    "come": "Verticale, 40-60 secondi, tu e Cristiana: come vi siete trovati, perché lavorare insieme senza concorrenza è un vantaggio per chi arriva."
   }
 }

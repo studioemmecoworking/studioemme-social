@@ -258,3 +258,14 @@ def test_primo_avvio_senza_chat_id_risponde_solo_chi_scrive(env, monkeypatch):
     monkeypatch.setattr(tg, "send_message", lambda text, buttons=None, chat=None: sent.append((text, chat)))
     pipeline.handle_message(state, cat.load(), {"text": "/start", "chat": {"id": 555}})
     assert sent and "555" in sent[0][0] and sent[0][1] == "555"
+
+
+def test_lint_nutrizionisti_ok_ma_visita_guidata_no():
+    catalog = {"assets": {f"a{i}": {"sid": f"F00{i}", "tipo": "foto", "qualita": 4, "persone": False}
+                          for i in (1, 2, 3)}}
+    entry = {"formato": "carosello", "prezzo": False}
+    d = good_draft()
+    d["didascalia"] += " Nello studio lavorano due nutrizionisti, che non si fanno concorrenza."
+    assert lint.check(d, entry, catalog) == []
+    d["didascalia"] += " Prenota una visita guidata."
+    assert any("visita guidata" in e for e in lint.check(d, entry, catalog))

@@ -7,7 +7,7 @@ import pytest
 from PIL import Image
 
 from src import catalog as cat
-from src import claude_api, cloudinary_api, config, instagram, lint, pipeline
+from src import claude_api, cloudinary_api, config, critic, instagram, lint, pipeline
 from src import telegram_api as tg
 from src.util import ApiError
 
@@ -72,6 +72,9 @@ class Env:
         mp.setattr(claude_api, "classify_image", lambda url: {
             "descrizione": "foto di prova", "soggetto": "studio3", "qualita": 4, "persone": False, "verticale": False})
         mp.setattr(claude_api, "write_draft", self._write)
+        self.reviews = []   # giudizi del critico, uno per chiamata; vuoto = voto 9
+        self.review_calls = 0
+        mp.setattr(critic, "review", self._review)
         mp.setattr(pipeline, "http", lambda method, url, **kw: type("R", (), {"content": jpeg()})())
         mp.setattr(tg, "send_message", lambda text, buttons=None, chat=None: self._msg(text, buttons))
         mp.setattr(tg, "send_photos", lambda urls: self.sent.append(("photos", urls, None)))
@@ -89,6 +92,12 @@ class Env:
         if instruction:
             d["note_per_utente"] = "modificato: " + instruction
         return d
+
+    def _review(self, entry, draft, image_urls, brief):
+        self.review_calls += 1
+        if self.reviews:
+            return self.reviews.pop(0)
+        return {"punteggio": 9, "giudizio": "Ottima.", "problemi": [], "istruzioni": ""}
 
     def _msg(self, text, buttons):
         self.sent.append(("msg", text, buttons))
@@ -269,3 +278,52 @@ def test_lint_nutrizionisti_ok_ma_visita_guidata_no():
     assert lint.check(d, entry, catalog) == []
     d["didascalia"] += " Prenota una visita guidata."
     assert any("visita guidata" in e for e in lint.check(d, entry, catalog))
+
+
+def judge(score, instr=""):
+    return {"punteggio": score, "giudizio": f"voto {score}", "problemi": ["x"] if instr else [], "istruzioni": instr}
+
+
+def test_critico_voto_alto_mostra_giudizio_senza_correggere(env):
+    pipeline.tick()
+    assert env.review_calls == 1
+    assert any("Giudizio del critico: 9/10. Ottima." in t for t in env.texts())
+    assert pipeline.load_state()["posts"]["2026-12-22"]["critico"]["giri"] == 0
+
+
+def test_critico_voto_basso_fa_correggere_e_mostra_la_migliore(env):
+    env.reviews = [judge(4, "Accorcia il titolo"), judge(8)]
+    pipeline.tick()
+    assert env.review_calls == 2
+    assert "Accorcia il titolo" in env.last_instruction
+    assert any("8/10 (corretta 1 volta)" in t for t in env.texts())
+    # le grafiche del primo tentativo scartato vengono cancellate
+    assert any("_v1_" in pid for pid in env.destroyed)
+
+
+def test_critico_si_ferma_dopo_due_correzioni_e_tiene_la_migliore(env):
+    env.reviews = [judge(5, "a"), judge(3, "b"), judge(4, "c")]
+    pipeline.tick()
+    assert env.review_calls == 3
+    assert any("5/10." in t for t in env.texts())
+    assert pipeline.load_state()["posts"]["2026-12-22"]["stato"] == "bozza_inviata"
+
+
+def test_critico_che_non_risponde_non_blocca_il_post(env):
+    env.reviews = [None]
+    pipeline.tick()
+    assert pipeline.load_state()["posts"]["2026-12-22"]["stato"] == "bozza_inviata"
+    assert not any("Giudizio del critico" in t for t in env.texts())
+
+
+def test_critico_review_vera_gestisce_errori_e_risposte(monkeypatch):
+    entry = {"data": "2026-12-22", "linea": "x", "formato": "carosello", "tema": "t", "prezzo": False, "note": ""}
+    d = good_draft()
+    def boom(*a, **k): raise ApiError("giu")
+    monkeypatch.setattr(claude_api, "ask", boom)
+    assert critic.review(entry, d, ["https://x/1.jpg"], "brief") is None
+    monkeypatch.setattr(claude_api, "ask", lambda *a, **k: '{"punteggio": 6, "giudizio": "ok", "problemi": ["a"], "istruzioni": "fai"}')
+    r = critic.review(entry, d, [], "brief")
+    assert r["punteggio"] == 6 and r["istruzioni"] == "fai"
+    monkeypatch.setattr(claude_api, "ask", lambda *a, **k: '{"punteggio": 42}')
+    assert critic.review(entry, d, [], "brief") is None

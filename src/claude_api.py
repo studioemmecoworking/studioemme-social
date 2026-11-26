@@ -94,7 +94,7 @@ Tipi di slide ammessi (per "carosello" da 6 a 10 slide: copertina, slide 2 che r
  {"tipo":"foto","foto":"F002","etichetta":"STUDIO 3","testo":"Lettino elettrico, luce naturale"}   (etichetta max 18, testo max 40)
  {"tipo":"testo","titolo":"...","punti":["...","..."]}   (titolo max 50; da 2 a 5 punti, max 70 caratteri l'uno)
  {"tipo":"finale","titolo":"Visita lo studio, senza impegno","righe":["..."],"prezzo":false}   (righe: 2-4, max 55 caratteri; "prezzo": true solo se il post lo prevede; ultima slide)
-Nel carosello la prima slide e' una copertina, la penultima e' un riepilogo di tipo "testo", l'ultima e' una "finale". Le slide sono numerate e col nome del profilo dal programma di grafica: non scriverli tu.
+Nel carosello la prima slide e' una copertina, la penultima e' un riepilogo di tipo "testo", l'ultima e' una "finale". Niente numeri di slide e niente nome del profilo (@) sulle slide: il titolare non li vuole, non scriverli.
 """
 
 

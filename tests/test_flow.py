@@ -353,3 +353,26 @@ def test_calendario_senza_troppi_inviti_ripetuti():
     assert len(rec) / len(cal) <= 0.4
     for a, b in zip(cal, cal[1:]):
         assert not (a["obiettivo"] == b["obiettivo"] == "reclutamento")
+
+
+def test_critico_review_images_storie_e_byte(monkeypatch):
+    seen = {}
+    def fake(system, content, max_tokens=900):
+        seen["system"], seen["content"] = system, content
+        return '{"punteggio": 8, "giudizio": "ok", "problemi": [], "istruzioni": ""}'
+    monkeypatch.setattr(claude_api, "ask", fake)
+    png = b"\x89PNG" + b"0" * 10
+    r = critic.review_images("storia", "Natale", [png, "https://x/2.jpg"], "brief")
+    assert r["punteggio"] == 8
+    assert "STORIA Instagram" in seen["system"] and "numerazione" in seen["system"]
+    assert seen["content"][1]["source"]["type"] == "base64" and seen["content"][2]["source"]["type"] == "url"
+    r = critic.review_images("grafica", "Carosello", [png], "brief", "didascalia")
+    assert "grafica gia' finita" in seen["system"]
+    def boom(*a, **k): raise ApiError("giu")
+    monkeypatch.setattr(claude_api, "ask", boom)
+    assert critic.review_images("storia", "x", [png], "b") is None
+
+
+def test_render_senza_numeri_ne_handle():
+    from src import render
+    assert not hasattr(render, "stamp") and not hasattr(render, "HANDLE")

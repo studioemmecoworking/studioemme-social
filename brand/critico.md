@@ -38,7 +38,7 @@ La copertina vale gran parte del risultato: se nessuno scorre, il resto non cont
   Buoni: "STUDIO ARREDATO A MEZZE GIORNATE", "IL TUO STUDIO, DA 180 € AL MESE".
   Deboli: "IL TUO SPAZIO IDEALE", "SCOPRI IL NOSTRO STUDIO".
 - Al massimo una riga di promessa sotto il titolo, che dica cosa trova chi scorre.
-- Dà un motivo per scorrere (freccia bianca, numero di slide, una curiosità lasciata aperta),
+- Dà un motivo per scorrere (freccia bianca, una curiosità lasciata aperta),
   senza titoli acchiappaclic che il post non mantiene.
 
 ### 2. Struttura del carosello (15 punti)
@@ -53,8 +53,8 @@ La copertina vale gran parte del risultato: se nessuno scorre, il resto non cont
   comprensibile senza aver visto il resto. È la slide che si salva o si manda a un collega.
 - Ultima slide: una sola azione, la stessa della didascalia (prendi un appuntamento per visitare lo
   studio, senza impegno), con il modo per farlo indicato nel brief.
-- Slide numerate (es. 3/8) e nome del profilo piccolo in un angolo su ogni slide: gli screenshot
-  girano senza di noi.
+- Niente numerazione delle slide (3/8) e niente nome del profilo (@) sulle slide: il titolare non le
+  vuole, la grafica resta pulita. Non penalizzare la loro assenza e segnala se compaiono.
 
 ### 3. Leggibilità sul telefono (15 punti)
 - Formato 1080x1350 (verticale 4:5).

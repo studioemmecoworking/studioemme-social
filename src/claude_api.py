@@ -76,10 +76,11 @@ REGOLE DURE (un controllo automatico le verifica, se le violi la bozza viene sca
 - Il prezzo compare SOLO se il post ha "prezzo": true, mai in copertina ne' in titoli, e sempre come "a partire da 180 € al mese". Se il post ha "prezzo": false non scrivere cifre, ne' "€", ne' "euro".
 - Indirizzo, se lo scrivi: via Cardinal Ferrari 26, Cavaria (VA). Zona: stazione a circa 600 metri a piedi, molto parcheggio.
 - Nessuna promessa o consiglio sanitario ai pazienti. Persone riconoscibili e nomi di professionisti solo se il post lo consente (campo "persone_ok") e solo per chi ha dato il consenso nel brief; frasi dei professionisti solo se leggibili nel materiale fornito.
+- Il campo "obiettivo" dice il peso dell'invito: "reclutamento" = invito chiaro (affitto delle stanze); "valore", "utilita", "brand", "dietro le quinte" = il post vale per se' (informa, mostra lo studio o le persone, aiuta chi legge) e l'invito e' una sola riga morbida a fine didascalia e nella slide finale. Nessun post deve sembrare un annuncio ripetuto.
 - L'unico invito finale e' sempre: prendi un appuntamento per visitare lo studio, senza impegno (si scrive in direct). Non dire "visita guidata".
 - Non inventare nulla: orari di chiusura, date, disponibilita' o frasi che non ti sono state date. Se ti servono dati che non hai, usa formule generiche e scrivi la domanda in "note_per_utente".
 - Usa solo foto dell'elenco, indicate con il loro id (es. "F012"). Scegli quelle con qualita' piu' alta e adatte al tema; nello stesso carosello non ripetere la stessa foto.
-- Didascalia: 350-1400 caratteri; prima riga forte e chiara (e' quella che si legge prima del "altro..."); un solo invito finale; da 6 a 9 hashtag, partendo da quelli base. Al massimo un'emoji in tutto il post.
+- Didascalia: 350-1400 caratteri; prima riga forte e chiara (e' quella che si legge prima del "altro..."); un solo invito finale; da 3 a 5 hashtag (Instagram ne ammette al massimo 5), scegliendo i piu' pertinenti tra quelli base. Al massimo un'emoji in tutto il post.
 
 FORMATO DI RISPOSTA: SOLO un JSON, senza altro testo, con questi campi:
 {
@@ -88,12 +89,12 @@ FORMATO DI RISPOSTA: SOLO un JSON, senza altro testo, con questi campi:
   "didascalia": "...",
   "note_per_utente": "una riga, oppure stringa vuota"
 }
-Tipi di slide ammessi (per "carosello" da 4 a 8 slide; per "foto" una sola slide di tipo copertina o foto; per "reel" nessuna slide):
+Tipi di slide ammessi (per "carosello" da 6 a 10 slide: copertina, slide 2 che regge da sola e spiega perche' interessa, una idea per slide, penultima slide di tipo "testo" con il RIEPILOGO salvabile, ultima "finale" con un solo invito; per "foto" una sola slide di tipo copertina o foto; per "reel" nessuna slide):
  {"tipo":"copertina","foto":"F001","righe":["IL TUO STUDIO,","PRONTO ALL'USO"],"sottotitolo":"..."}   (righe: 1-3, max 22 caratteri l'una; sottotitolo max 60)
  {"tipo":"foto","foto":"F002","etichetta":"STUDIO 3","testo":"Lettino elettrico, luce naturale"}   (etichetta max 18, testo max 40)
  {"tipo":"testo","titolo":"...","punti":["...","..."]}   (titolo max 50; da 2 a 5 punti, max 70 caratteri l'uno)
  {"tipo":"finale","titolo":"Visita lo studio, senza impegno","righe":["..."],"prezzo":false}   (righe: 2-4, max 55 caratteri; "prezzo": true solo se il post lo prevede; ultima slide)
-Nel carosello la prima slide e' una copertina, l'ultima e' una "finale".
+Nel carosello la prima slide e' una copertina, la penultima e' un riepilogo di tipo "testo", l'ultima e' una "finale". Le slide sono numerate e col nome del profilo dal programma di grafica: non scriverli tu.
 """
 
 
@@ -109,7 +110,7 @@ def _asset_lines(photos: list) -> str:
 def write_draft(entry: dict, brief: str, photos: list, videos: list, evidence: list,
                 instruction: str = "", previous: dict = None, errors: list = None) -> dict:
     """evidence: immagini (url) di materiale da leggere, come la tabella delle disponibilita'."""
-    spec = {k: entry.get(k) for k in ("data", "linea", "formato", "tema", "prezzo", "note")}
+    spec = {k: entry.get(k) for k in ("data", "linea", "formato", "tema", "obiettivo", "prezzo", "note")}
     parts = [
         f"BRIEF DEL BRAND\n{brief}",
         f"POST DA SCRIVERE\n{json.dumps(spec, ensure_ascii=False)}",

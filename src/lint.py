@@ -59,8 +59,10 @@ def check(draft: dict, entry: dict, catalog: dict) -> list:
         if len(slides) != 1:
             errors.append("Un post con foto singola ha una sola slide.")
     else:
-        if not 4 <= len(slides) <= 8:
-            errors.append("Il carosello deve avere da 4 a 8 slide.")
+        if not 6 <= len(slides) <= 10:
+            errors.append("Il carosello deve avere da 6 a 10 slide.")
+        if len(slides) >= 3 and slides[-2].get("tipo") != "testo":
+            errors.append("La penultima slide deve essere un riepilogo (tipo testo) che si possa salvare.")
         if slides and slides[0].get("tipo") != "copertina":
             errors.append("La prima slide del carosello deve essere una copertina.")
         if slides and slides[-1].get("tipo") != "finale":
@@ -105,8 +107,8 @@ def check(draft: dict, entry: dict, catalog: dict) -> list:
     if not 350 <= len(caption) <= 1900:
         errors.append("La didascalia deve essere tra 350 e 1900 caratteri.")
     tags = HASHTAG_RE.findall(caption)
-    if not 5 <= len(tags) <= 12:
-        errors.append("Servono da 5 a 12 hashtag nella didascalia.")
+    if not 3 <= len(tags) <= 5:
+        errors.append("Servono da 3 a 5 hashtag nella didascalia (Instagram ne ammette al massimo 5).")
     if len(EMOJI_RE.findall(caption + " ".join(t for _, t, _ in _texts(draft)))) > 2:
         errors.append("Troppe emoji (massimo 2).")
 

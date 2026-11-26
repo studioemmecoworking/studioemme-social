@@ -33,12 +33,14 @@ def good_draft(price=False):
                "intere, con orari flessibili dal mattino presto alla sera tardi. La stazione è a 600 metri a "
                "piedi e il parcheggio in zona è comodo. Vuoi vedere lo studio? Scrivici in direct.\n\n"
                "Via Cardinal Ferrari 26, Cavaria (VA)\n\n"
-               "#coworking #studioincondivisione #professionistisalute #fisioterapisti #osteopati #cavaria")
+               "#coworking #studioincondivisione #professionistisalute #osteopati #cavaria")
     return {
         "slides": [
             {"tipo": "copertina", "foto": "F001", "righe": ["IL TUO STUDIO,", "PRONTO ALL'USO"], "sottotitolo": "Studio Emme"},
             {"tipo": "foto", "foto": "F002", "etichetta": "STUDIO 3", "testo": "Lettino elettrico"},
             {"tipo": "foto", "foto": "F003", "etichetta": "STUDIO 1", "testo": "Raccolto e luminoso"},
+            {"tipo": "testo", "titolo": "Cosa trovi in studio", "punti": ["Stanza arredata", "Sala d'attesa condivisa", "Orari flessibili"]},
+            {"tipo": "testo", "titolo": "In breve", "punti": ["Mezze giornate", "Autonomia", "Stazione a 600 metri"]},
             {"tipo": "finale", "titolo": "Vieni a vedere lo studio", "righe": ["Scegli tu giorni e orari", "Tutto incluso e già pronto"], "prezzo": price},
         ],
         "didascalia": caption, "note_per_utente": "",
@@ -137,7 +139,7 @@ def test_prepara_bozza_e_invia_anteprima(env):
     assert "photos" in kinds
     last = env.sent[-1]
     assert last[2][0][0]["callback_data"] == "ok:2026-12-22"
-    assert len(env.sent[0][1]) == 4  # quattro slide
+    assert len(env.sent[0][1]) == 6  # sei slide
 
 
 def test_approva_e_pubblica_all_ora(env):
@@ -150,8 +152,8 @@ def test_approva_e_pubblica_all_ora(env):
     pipeline.tick()
     st = pipeline.load_state()["posts"]["2026-12-22"]
     assert st["stato"] == "pubblicato" and st["link"].startswith("https://instagram.com")
-    assert len(env.published) == 1 and len(env.published[0][0]) == 4
-    assert len(env.destroyed) == 4  # anteprime ripulite
+    assert len(env.published) == 1 and len(env.published[0][0]) == 6
+    assert len(env.destroyed) == 6  # anteprime ripulite
 
 
 def test_senza_approvazione_non_pubblica(env):
@@ -327,3 +329,27 @@ def test_critico_review_vera_gestisce_errori_e_risposte(monkeypatch):
     assert r["punteggio"] == 6 and r["istruzioni"] == "fai"
     monkeypatch.setattr(claude_api, "ask", lambda *a, **k: '{"punteggio": 42}')
     assert critic.review(entry, d, [], "brief") is None
+
+
+def test_storie_piano_valido_e_render():
+    from src import stories
+    S = stories.load_stories()
+    ids = [s["id"] for s in S]
+    assert len(ids) == len(set(ids))
+    for s in S:
+        for f in s["frames"]:
+            assert f["layout"] in stories.LAYOUTS
+            if s["consegna"] == "auto":
+                assert not f.get("sticker")
+            elif f.get("sticker"):
+                assert stories.sticker_help(f)
+    im = stories.render_frame({"layout": "domanda", "titolo": "Lettino o scrivania?"})
+    assert im.size == (1080, 1920)
+
+
+def test_calendario_senza_troppi_inviti_ripetuti():
+    cal = json.loads((config.ROOT / "piano" / "calendario.json").read_text(encoding="utf-8"))
+    rec = [e for e in cal if e["obiettivo"] == "reclutamento"]
+    assert len(rec) / len(cal) <= 0.4
+    for a, b in zip(cal, cal[1:]):
+        assert not (a["obiettivo"] == b["obiettivo"] == "reclutamento")

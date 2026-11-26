@@ -1,0 +1,836 @@
+[
+ {
+  "id": "S-2026-12-08-fes",
+  "data": "2026-12-08",
+  "ora": "09:30",
+  "tipo": "festivita",
+  "nome": "Immacolata",
+  "consegna": "auto",
+  "post": null,
+  "frames": [
+   {
+    "layout": "cartolina",
+    "titolo": "BUON PONTE",
+    "sottotitolo": "Da Studio Emme",
+    "foto": "sala_attesa"
+   }
+  ]
+ },
+ {
+  "id": "S-2026-12-24-fes",
+  "data": "2026-12-24",
+  "ora": "10:00",
+  "tipo": "festivita",
+  "nome": "Natale",
+  "consegna": "auto",
+  "post": null,
+  "frames": [
+   {
+    "layout": "cartolina",
+    "titolo": "BUON NATALE",
+    "sottotitolo": "Dal tuo coworking di Cavaria",
+    "foto": "sala_attesa"
+   }
+  ]
+ },
+ {
+  "id": "S-2026-12-30-gan",
+  "data": "2026-12-30",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2026-12-30",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "IL 2027 INIZIA CON UNA STANZA?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Il 2027 in studio?",
+     "opzioni": [
+      "Mi serve una stanza",
+      "Ci sto pensando"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2026-12-31-fes",
+  "data": "2026-12-31",
+  "ora": "11:00",
+  "tipo": "festivita",
+  "nome": "Fine anno",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "PER IL 2027 VUOI...",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Per il 2027 vuoi...",
+     "opzioni": [
+      "Piu' giornate in studio",
+      "Piu' tempo per te"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-01-fes",
+  "data": "2027-01-01",
+  "ora": "10:00",
+  "tipo": "festivita",
+  "nome": "Capodanno",
+  "consegna": "auto",
+  "post": null,
+  "frames": [
+   {
+    "layout": "cartolina",
+    "titolo": "BUON 2027",
+    "sottotitolo": "Studio Emme",
+    "foto": "studio3"
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-05-gan",
+  "data": "2027-01-05",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-01-05",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "LA TUA AGENDA E' IN ORDINE?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "La tua agenda e'...",
+     "opzioni": [
+      "In ordine",
+      "Da sistemare"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-06-fes",
+  "data": "2027-01-06",
+  "ora": "09:30",
+  "tipo": "festivita",
+  "nome": "Epifania",
+  "consegna": "auto",
+  "post": null,
+  "frames": [
+   {
+    "layout": "cartolina",
+    "titolo": "BUONA EPIFANIA",
+    "foto": "dettaglio"
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-08-gan",
+  "data": "2027-01-08",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-01-08",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "QUALI GIORNI TI SERVIREBBERO?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Quali giorni ti servirebbero?"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-12-gan",
+  "data": "2027-01-12",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-01-12",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "PICCOLA O GRANDE?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Quale stanza preferisci?",
+     "opzioni": [
+      "Piccola e raccolta",
+      "Grande e luminosa"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-13-rub",
+  "data": "2027-01-13",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "LAVORI CON IL LETTINO O IN COLLOQUIO?",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Lavori con il...",
+     "opzioni": [
+      "Lettino",
+      "Colloquio"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-15-gan",
+  "data": "2027-01-15",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-01-15",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "LETTINO O SCRIVANIA?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Lavori con...",
+     "opzioni": [
+      "Il lettino",
+      "La scrivania"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-19-gan",
+  "data": "2027-01-19",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-01-19",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "QUANTO DISTA LA STAZIONE?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "quiz",
+     "domanda": "Dalla stazione allo studio?",
+     "opzioni": [
+      "300 m",
+      "600 m",
+      "1 km"
+     ],
+     "corretta": 1
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-20-rub",
+  "data": "2027-01-20",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "COSA NON PUO' MANCARE NELLA STANZA DOVE RICEVI?",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Scrivi qui cosa non puo' mancare"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-22-gan",
+  "data": "2027-01-22",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-01-22",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "LA PRIMA COSA CHE FAI QUANDO ENTRI?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "La prima cosa che fai in stanza?"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-26-gan",
+  "data": "2027-01-26",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-01-26",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "COSA CHIEDERESTI A CHI CI LAVORA?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Cosa chiederesti a chi ci lavora?"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-27-rub",
+  "data": "2027-01-27",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "MEZZA GIORNATA O GIORNATA INTERA?",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Ti serve...",
+     "opzioni": [
+      "Mezza giornata",
+      "Giornata intera"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-01-29-gan",
+  "data": "2027-01-29",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-01-29",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "STUDIO TUO O CONDIVISO?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Studio tuo o condiviso?",
+     "opzioni": [
+      "Tutto mio",
+      "Condiviso"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-02-gan",
+  "data": "2027-02-02",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-02-02",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "IL LETTINO ELETTRICO CE L'HAI?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Lettino elettrico?",
+     "opzioni": [
+      "Ce l'ho",
+      "Non ce l'ho"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-03-rub",
+  "data": "2027-02-03",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "COME ARRIVI DI SOLITO AL LAVORO?",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Arrivi...",
+     "opzioni": [
+      "In treno",
+      "In auto"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-05-gan",
+  "data": "2027-02-05",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-02-05",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "DUBBI SUL CONTRATTO SEMESTRALE?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Hai dubbi sul contratto?"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-09-fes",
+  "data": "2027-02-09",
+  "ora": "09:30",
+  "tipo": "festivita",
+  "nome": "Carnevale",
+  "consegna": "auto",
+  "post": null,
+  "frames": [
+   {
+    "layout": "cartolina",
+    "titolo": "A CARNEVALE OGNI SCHERZO VALE",
+    "sottotitolo": "Qui il camice basta",
+    "foto": "studio1"
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-10-rub",
+  "data": "2027-02-10",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "QUALE DOMANDA TI FAI PRIMA DI SCEGLIERE UNA STANZA?",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Scrivi la tua domanda"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-16-gan",
+  "data": "2027-02-16",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-02-16",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "RICEVI SU APPUNTAMENTO?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Ricevi su appuntamento?",
+     "opzioni": [
+      "Si'",
+      "No"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-17-rub",
+  "data": "2027-02-17",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "QUANTI GIORNI A SETTIMANA TI SERVIREBBERO?",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Giorni in studio",
+     "opzioni": [
+      "Uno",
+      "Due o piu'"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-19-gan",
+  "data": "2027-02-19",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-02-19",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "SALA D'ATTESA: RADIO O SILENZIO?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "In sala d'attesa...",
+     "opzioni": [
+      "Radio",
+      "Silenzio"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-23-gan",
+  "data": "2027-02-23",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-02-23",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "DUE NUTRIZIONISTI, UNA DOMANDA",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Chiedi ai due nutrizionisti"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-24-rub",
+  "data": "2027-02-24",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "PRIMO APPUNTAMENTO: MATTINO PRESTO O SERA TARDI?",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Preferisci...",
+     "opzioni": [
+      "Mattino presto",
+      "Sera tardi"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-26-gan",
+  "data": "2027-02-26",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-02-26",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "A CHE ORA INIZI?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Il tuo primo cliente?",
+     "opzioni": [
+      "Alle 8",
+      "Dopo le 18"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-03-rub",
+  "data": "2027-03-03",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "FAI UNA DOMANDA A STUDIO EMME",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Chiedi quello che vuoi sullo studio"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-05-gan",
+  "data": "2027-03-05",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-03-05",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "IL TUO TRUCCO PER LA PAUSA PRANZO?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Il tuo trucco per la pausa pranzo?"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-08-fes",
+  "data": "2027-03-08",
+  "ora": "09:30",
+  "tipo": "festivita",
+  "nome": "8 marzo",
+  "consegna": "auto",
+  "post": null,
+  "frames": [
+   {
+    "layout": "cartolina",
+    "titolo": "BUONA FESTA DELLA DONNA",
+    "sottotitolo": "Studio Emme",
+    "foto": "sala_attesa"
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-09-gan",
+  "data": "2027-03-09",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-03-09",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "CONSULENZE: TI SERVE UNA STANZA?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Fai consulenze?",
+     "opzioni": [
+      "Si'",
+      "Non ancora"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-10-rub",
+  "data": "2027-03-10",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "QUANTI NUTRIZIONISTI LAVORANO IN STUDIO EMME?",
+    "sticker": {
+     "tipo": "quiz",
+     "domanda": "Quanti nutrizionisti?",
+     "opzioni": [
+      "Uno",
+      "Due",
+      "Tre"
+     ],
+     "corretta": 1
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-16-gan",
+  "data": "2027-03-16",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-03-16",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "UNA FINESTRA O DUE?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Una finestra o due?",
+     "opzioni": [
+      "Una",
+      "Due finestroni"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-17-rub",
+  "data": "2027-03-17",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "STUDIO CONDIVISO VUOL DIRE...",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Per te vuol dire...",
+     "opzioni": [
+      "Flessibilita'",
+      "Risparmio"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-19-gan",
+  "data": "2027-03-19",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-03-19",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "HAI MAI VISTO UNO STUDIO CONDIVISO DAL VIVO?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Visto dal vivo?",
+     "opzioni": [
+      "Si'",
+      "Non ancora"
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-23-gan",
+  "data": "2027-03-23",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-03-23",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "COSA CAMBIERESTI NELLA TUA GIORNATA IN STUDIO?",
+    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Scrivilo qui"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-24-rub",
+  "data": "2027-03-24",
+  "ora": "12:30",
+  "tipo": "rubrica",
+  "nome": "Domanda del mercoledi'",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "COSA TI HA FATTO SCEGLIERE IL TUO STUDIO?",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Raccontacelo qui"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-28-fes",
+  "data": "2027-03-28",
+  "ora": "09:30",
+  "tipo": "festivita",
+  "nome": "Pasqua",
+  "consegna": "auto",
+  "post": null,
+  "frames": [
+   {
+    "layout": "cartolina",
+    "titolo": "BUONA PASQUA",
+    "sottotitolo": "Studio Emme",
+    "foto": "studio3"
+   }
+  ]
+ }
+]

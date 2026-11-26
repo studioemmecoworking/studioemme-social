@@ -127,7 +127,6 @@ def slide_text(titolo, punti):
             d.text((110 + 40, y), ln, font=fb, fill=INK)
             y += size + 12
         y += 26
-    center(d, H - 90, config.ADDRESS, font(FONT_M, 26), LIGHT)
     return im
 
 
@@ -157,6 +156,19 @@ def slide_final(titolo, righe, prezzo):
     return im
 
 
+HANDLE = "@studio_emme_coworking"
+
+
+def stamp(im: Image.Image, n: int, total: int, dark_bg: bool) -> Image.Image:
+    """Numero della slide e nome del profilo, piccoli in basso: le immagini viaggiano anche senza didascalia."""
+    d = ImageDraw.Draw(im)
+    text = f"{n}/{total}  ·  {HANDLE}"
+    fnt = font(FONT_M, 26)
+    w = d.textlength(text, font=fnt)
+    d.text(((W - w) / 2, H - 52), text, font=fnt, fill=(235, 235, 235) if dark_bg else (110, 110, 110))
+    return im
+
+
 def render_slides(draft: dict, photos: dict) -> list:
     """photos: id foto -> immagine (bytes). Restituisce la lista di immagini PIL."""
     out = []
@@ -170,6 +182,9 @@ def render_slides(draft: dict, photos: dict) -> list:
             out.append(slide_text(s["titolo"], s["punti"]))
         elif t == "finale":
             out.append(slide_final(s["titolo"], s.get("righe", []), bool(s.get("prezzo"))))
+    if len(out) > 1:
+        for i, (im, s) in enumerate(zip(out, draft["slides"])):
+            stamp(im, i + 1, len(out), s["tipo"] in ("copertina", "foto"))
     return out
 
 

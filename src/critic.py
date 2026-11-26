@@ -21,7 +21,7 @@ def review(entry: dict, draft: dict, image_urls: list, brief: str):
     """Restituisce il giudizio, oppure None se il critico non e' riuscito (il post prosegue comunque)."""
     try:
         rules = CRITIC_PATH.read_text(encoding="utf-8")
-        spec = {k: entry.get(k) for k in ("data", "linea", "formato", "tema", "prezzo", "note")}
+        spec = {k: entry.get(k) for k in ("data", "linea", "formato", "tema", "obiettivo", "prezzo", "note")}
         text = "\n\n".join([
             f"BRIEF DEL BRAND\n{brief}",
             f"POST\n{json.dumps(spec, ensure_ascii=False)}",

@@ -5,7 +5,8 @@ from . import catalog as cat
 from . import config
 
 FORBIDDEN = ["studio medico", "poliambulatorio", "ambulatorio", "clinica", "centro medico",
-             "nutrizionist", "guarigione", "guarire", "garantiamo", "garantito"]
+             "guarigione", "guarire", "garantiamo", "garantito", "visita guidata",
+             "senza vincol", "terapi", "trattament", "risultati"]
 EMOJI_RE = re.compile("[\U0001F300-\U0001FAFF☀-➿⭐⬆]")
 PRICE_RE = re.compile(r"€|\beuro\b|\b180\b", re.I)
 HASHTAG_RE = re.compile(r"#\w+")
@@ -113,7 +114,7 @@ def check(draft: dict, entry: dict, catalog: dict) -> list:
     for where, text, is_title in _texts(draft):
         low = text.lower()
         for bad in FORBIDDEN:
-            if bad in low:
+            if re.search(r"(?<![a-zà-ù])" + re.escape(bad), low):
                 errors.append(f"{where}: contiene '{bad}'.")
         if "—" in text or "–" in text:
             errors.append(f"{where}: contiene un trattino lungo.")

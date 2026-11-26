@@ -13,7 +13,7 @@ GREY = (90, 90, 90)
 LIGHT = (140, 140, 140)
 FONT_B = str(config.ROOT / "assets" / "fonts" / "Poppins-Bold.ttf")
 FONT_M = str(config.ROOT / "assets" / "fonts" / "Poppins-Medium.ttf")
-LOGO = str(config.ROOT / "assets" / "logo.png")
+LOGO = str(config.ROOT / "assets" / "logo_slide.png")
 MARGIN = 64
 
 
@@ -141,15 +141,15 @@ def slide_final(titolo, righe, prezzo):
     for ln in wrap(d, titolo, ft, W - 2 * 90)[:2]:
         center(d, y, ln, ft, DARK)
         y += 96
-    d.rectangle((W / 2 - 60, y + 10, W / 2 + 60, y + 16), fill=GREEN)
-    y += 50
+    d.rectangle((W / 2 - 60, y + 26, W / 2 + 60, y + 32), fill=GREEN)
+    y += 64
     for i, t in enumerate(righe[:4]):
         fnt = fit_font(d, t, FONT_B if i == 0 else FONT_M, 38 if i == 0 else 33, W - 2 * 70, 24)
         center(d, y, t, fnt, INK if i == 0 else GREY)
         y += 56
     by = max(y + 30, 960)
     d.rounded_rectangle((190, by, 890, by + 80), radius=40, fill=GREEN)
-    center(d, by + 14, "Scrivici per visitare lo studio", font(FONT_B, 36), "white")
+    center(d, by + 14, "Prendi un appuntamento", font(FONT_B, 36), "white")
     center(d, by + 135, config.ADDRESS, fit_font(d, config.ADDRESS, FONT_B, 32, W - 140), INK)
     center(d, by + 183, "Ognuno lavora in autonomia", font(FONT_M, 28), (110, 110, 110))
     if prezzo:

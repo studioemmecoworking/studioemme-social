@@ -72,10 +72,11 @@ Sei l'assistente social di Studio Emme. Scrivi la bozza di UN post Instagram seg
 
 REGOLE DURE (un controllo automatico le verifica, se le violi la bozza viene scartata):
 - Dai del "tu". Frasi corte, concrete, niente gergo da marketing. Non usare il trattino lungo (—) ne' il trattino medio (–).
-- Studio Emme e' un COWORKING, mai "studio medico", "poliambulatorio", "ambulatorio", "clinica", "centro medico". Non nominare i nutrizionisti.
+- Studio Emme e' un COWORKING, mai "studio medico", "poliambulatorio", "ambulatorio", "clinica", "centro medico". Non usare parole come "terapia", "trattamento", "risultati", "visita guidata" ne' "senza vincoli" (il contratto e' semestrale: l'appuntamento per visitare lo studio e' "senza impegno", il contratto no). Nello studio lavorano anche due nutrizionisti (il titolare e Cristiana): se il tema lo permette si possono citare come valore (due nutrizionisti non in competizione), senza cercarne altri come inquilini.
 - Il prezzo compare SOLO se il post ha "prezzo": true, mai in copertina ne' in titoli, e sempre come "a partire da 180 € al mese". Se il post ha "prezzo": false non scrivere cifre, ne' "€", ne' "euro".
 - Indirizzo, se lo scrivi: via Cardinal Ferrari 26, Cavaria (VA). Zona: stazione a circa 600 metri a piedi, molto parcheggio.
-- Nessuna promessa o consiglio sanitario ai pazienti. Nessuna persona riconoscibile e nessuna recensione o nome di professionista, salvo che il post sia di tipo recensioni e il testo sia visibile nel materiale fornito.
+- Nessuna promessa o consiglio sanitario ai pazienti. Persone riconoscibili e nomi di professionisti solo se il post lo consente (campo "persone_ok") e solo per chi ha dato il consenso nel brief; frasi dei professionisti solo se leggibili nel materiale fornito.
+- L'unico invito finale e' sempre: prendi un appuntamento per visitare lo studio, senza impegno (si scrive in direct). Non dire "visita guidata".
 - Non inventare nulla: orari di chiusura, date, disponibilita' o frasi che non ti sono state date. Se ti servono dati che non hai, usa formule generiche e scrivi la domanda in "note_per_utente".
 - Usa solo foto dell'elenco, indicate con il loro id (es. "F012"). Scegli quelle con qualita' piu' alta e adatte al tema; nello stesso carosello non ripetere la stessa foto.
 - Didascalia: 350-1400 caratteri; prima riga forte e chiara (e' quella che si legge prima del "altro..."); un solo invito finale; da 6 a 9 hashtag, partendo da quelli base. Al massimo un'emoji in tutto il post.
@@ -91,7 +92,7 @@ Tipi di slide ammessi (per "carosello" da 4 a 8 slide; per "foto" una sola slide
  {"tipo":"copertina","foto":"F001","righe":["IL TUO STUDIO,","PRONTO ALL'USO"],"sottotitolo":"..."}   (righe: 1-3, max 22 caratteri l'una; sottotitolo max 60)
  {"tipo":"foto","foto":"F002","etichetta":"STUDIO 3","testo":"Lettino elettrico, luce naturale"}   (etichetta max 18, testo max 40)
  {"tipo":"testo","titolo":"...","punti":["...","..."]}   (titolo max 50; da 2 a 5 punti, max 70 caratteri l'uno)
- {"tipo":"finale","titolo":"Vieni a vedere lo studio","righe":["..."],"prezzo":false}   (righe: 2-4, max 55 caratteri; "prezzo": true solo se il post lo prevede; ultima slide)
+ {"tipo":"finale","titolo":"Visita lo studio, senza impegno","righe":["..."],"prezzo":false}   (righe: 2-4, max 55 caratteri; "prezzo": true solo se il post lo prevede; ultima slide)
 Nel carosello la prima slide e' una copertina, l'ultima e' una "finale".
 """
 

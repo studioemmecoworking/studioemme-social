@@ -23,6 +23,8 @@ PREVIEW_PREFIX = "anteprime"     # dove il programma mette le grafiche pronte
 PUBLISH_TIME = (18, 30)          # ora di uscita dei post (ora italiana)
 PREPARE_DAYS_AHEAD = 5           # quanti giorni prima prepara la bozza
 MAX_LATE_HOURS = 24              # oltre questo ritardo un post approvato non esce piu'
+CRITIC_MIN_SCORE = 7             # sotto questo voto il critico rimanda la bozza al redattore
+CRITIC_MAX_LOOPS = 2             # quante volte al massimo si corregge prima di mostrartela
 MAX_REVISIONS = 5                # modifiche richieste per ogni post
 M13_MAX_AGE_DAYS = 20            # la tabella disponibilita' non deve essere piu' vecchia
 

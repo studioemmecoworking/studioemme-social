@@ -3,7 +3,7 @@ prepara le nuove bozze e ti avvisa se manca del materiale."""
 from datetime import date, datetime, timedelta
 
 from . import catalog as cat
-from . import claude_api, cloudinary_api, config, instagram, lint, render, telegram_api as tg
+from . import claude_api, cloudinary_api, config, critic, instagram, lint, render, telegram_api as tg
 from .util import ApiError, http, load_json, redact, save_json
 
 STATE_PATH = config.ROOT / "stato" / "stato.json"
@@ -107,7 +107,7 @@ def make_draft(entry: dict, catalog: dict, instruction: str = "", previous: dict
     raise DraftError("; ".join(errors[:6]))
 
 
-def build_assets(entry: dict, draft: dict, catalog: dict, version: int) -> dict:
+def build_assets(entry: dict, draft: dict, catalog: dict, version) -> dict:
     """Crea le immagini (o sceglie il video), le carica e restituisce gli indirizzi pubblici."""
     if entry["formato"] == "reel":
         v = cat.by_sid(catalog, draft["video"])
@@ -130,7 +130,7 @@ def build_assets(entry: dict, draft: dict, catalog: dict, version: int) -> dict:
     return {"video": "", "anteprima_video": "", "immagini": urls, "public_ids": ids}
 
 
-def send_preview(entry: dict, draft: dict, assets: dict) -> int:
+def send_preview(entry: dict, draft: dict, assets: dict, review: dict = None, rounds: int = 0) -> int:
     head = f"Bozza per {label(entry)}\nUscita prevista: {config.data_it(date.fromisoformat(entry['data']))} alle " \
            f"{config.PUBLISH_TIME[0]}:{config.PUBLISH_TIME[1]:02d}"
     if assets["immagini"]:
@@ -143,6 +143,9 @@ def send_preview(entry: dict, draft: dict, assets: dict) -> int:
     text = f"{head}\n\nDidascalia:\n{draft['didascalia']}"
     if draft.get("note_per_utente"):
         text += f"\n\nDa controllare: {draft['note_per_utente']}"
+    if review:
+        corrected = f" (corretta {rounds} {'volta' if rounds == 1 else 'volte'})" if rounds else ""
+        text += f"\n\nGiudizio del critico: {review['punteggio']}/10{corrected}. {review['giudizio']}"
     eid = entry["id"]
     msg = tg.send_message(text, buttons=[
         [{"text": "✅ Approva", "callback_data": f"ok:{eid}"},
@@ -150,6 +153,31 @@ def send_preview(entry: dict, draft: dict, assets: dict) -> int:
         [{"text": "⏭ Salta questo post", "callback_data": f"skip:{eid}"}],
     ])
     return msg["message_id"]
+
+
+def refine(entry: dict, catalog: dict, draft: dict, assets: dict, version: int):
+    """Il critico guarda la bozza gia' disegnata e, se il voto e' basso, la fa correggere (al massimo
+    CRITIC_MAX_LOOPS volte). Restituisce (bozza, grafiche, giudizio, giri) della versione migliore."""
+    brief = BRIEF_PATH.read_text(encoding="utf-8")
+    tried = []          # (bozza, grafiche, giudizio)
+    for i in range(config.CRITIC_MAX_LOOPS + 1):
+        review = critic.review(entry, draft, assets["immagini"], brief)
+        tried.append((draft, assets, review))
+        if review is None or review["punteggio"] >= config.CRITIC_MIN_SCORE or i == config.CRITIC_MAX_LOOPS \
+                or not review["istruzioni"]:
+            break
+        try:
+            draft = make_draft(entry, catalog, review["istruzioni"], draft)
+            assets = build_assets(entry, draft, catalog, f"{version}c{i + 1}")
+        except (DraftError, ApiError):
+            break
+    scored = [t for t in tried if t[2]]
+    best = max(scored, key=lambda t: t[2]["punteggio"]) if scored else tried[-1]
+    for t in tried:
+        if t is not best:
+            for pid in t[1]["public_ids"]:
+                _safe_destroy(pid)
+    return best[0], best[1], best[2], tried.index(best)
 
 
 def prepare_entry(state: dict, catalog: dict, entry: dict, instruction: str = "") -> None:
@@ -166,10 +194,13 @@ def prepare_entry(state: dict, catalog: dict, entry: dict, instruction: str = ""
     ps["revisioni"] = ps.get("revisioni", 0) + (1 if instruction else 0)
     version = ps["revisioni"] + 1
     assets = build_assets(entry, draft, catalog, version)
+    draft, assets, review, rounds = refine(entry, catalog, draft, assets, version)
     old_ids = ps.get("public_ids", [])
     ps.update({"bozza": draft, "immagini": assets["immagini"], "video": assets["video"],
-               "public_ids": assets["public_ids"], "stato": "bozza_inviata"})
-    ps["messaggio"] = send_preview(entry, draft, assets)
+               "public_ids": assets["public_ids"], "stato": "bozza_inviata",
+               "critico": {"punteggio": review["punteggio"], "giudizio": review["giudizio"],
+                           "giri": rounds} if review else None})
+    ps["messaggio"] = send_preview(entry, draft, assets, review, rounds)
     for pid in old_ids:
         _safe_destroy(pid)
 

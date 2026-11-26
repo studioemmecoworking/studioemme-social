@@ -15,9 +15,13 @@ Non ci rivolgiamo ai pazienti.
 Nutrizionisti: nello studio lavorano già due nutrizionisti (il titolare e Cristiana) e non ne cerchiamo altri, per non competere sugli stessi pazienti. Non è un segreto, anzi è un valore: due nutrizionisti, quindi non in concorrenza, che lavorano bene nello stesso studio. Si può dire con naturalezza, senza fare dei nutrizionisti il centro della pagina.
 
 ## Chi lavora nello studio
-- Il titolare e Cristiana, nutrizionisti: disponibili a comparire in foto e video, con nome e ruolo.
-- Un'osteopata e una psicologa: disponibili, ma nome, foto e frasi solo dopo il loro consenso scritto (un messaggio basta). Fino ad allora si parla di "un'osteopata" o "una psicologa" senza nome.
+- Il titolare (nutrizionista): disponibile a comparire in foto e video, con nome e ruolo. Nelle foto è l'uomo con camice bianco o dolcevita blu.
+- Cristiana, nutrizionista: disponibile a comparire in foto e video, con nome e ruolo.
+- Un'osteopata (camice verde nelle foto): presente e disponibile. Le sue foto si possono usare; il nome solo con il suo consenso scritto, altrimenti "un'osteopata".
+- Una psicologa: disponibile, ma nome e frasi solo dopo il suo consenso scritto; si parla di "una psicologa".
 - Un fisioterapista: nessun contenuto su di lui.
+- Un altro osteopata (camice azzurro, occhiali e chignon nelle foto): non lavora più nello studio, ma ha dato il consenso all'uso della sua immagine. Foto ok come immagine dell'ambiente di lavoro, ma MAI presentarlo come professionista dello studio, MAI nominarlo, MAI scrivere "il nostro osteopata".
+- La ragazza con camicia azzurra (psicologa) non è più presente nello studio. Usarla poco: solo come sfondo o in al massimo 1-2 post in tutto il piano, mai come volto di un post sui professionisti, mai nominata.
 Le frasi dei professionisti (testimonianze scritte) si usano solo quando arrivano nel materiale, con il consenso. Mai inventarle.
 
 ## Offerta e condizioni
@@ -47,7 +51,7 @@ Da dire: "coworking per professionisti della salute", "stanze pronte all'uso", "
 Da evitare:
 - "Studio medico", "poliambulatorio", "ambulatorio", "clinica" e ogni termine che faccia pensare a una struttura sanitaria unica.
 - "Terapia", "trattamento", "risultati", promesse o consigli sanitari ai pazienti, prima/dopo.
-- Foto di pazienti o di persone riconoscibili senza consenso scritto. Il titolare e Cristiana sono i soli che si possono mostrare e nominare liberamente.
+- Foto di pazienti o di persone riconoscibili senza consenso. Il titolare e Cristiana sono i soli che si possono mostrare e nominare liberamente. Nei post sui professionisti presenti non usare l'osteopata con camice azzurro né la psicologa, che non lavorano più nello studio.
 - Nomi e recensioni degli altri professionisti, finché non c'è l'accordo con loro.
 - Dati inventati: orari di chiusura, date, disponibilità. Se non li hai, scrivi una formula generica e chiedi all'utente.
 - Quando si parla di "tutto incluso" non elencare i servizi con la parola "inclusi" accanto a ogni voce: dire che è tutto incluso e pronto per lavorare in comodità.

@@ -21,7 +21,8 @@ def upload_bytes(data: bytes, public_id: str, resource_type: str = "image") -> d
     params = {"public_id": public_id, "timestamp": int(time.time()), "overwrite": "true"}
     sig = _sign(params, secret)
     r = http("POST", f"https://api.cloudinary.com/v1_1/{cloud}/{resource_type}/upload",
-             data={**params, "api_key": key, "signature": sig}, files={"file": ("file", data)})
+             data={**params, "api_key": key, "signature": sig}, files={"file": ("file", data)},
+             timeout=600)
     j = as_json(r, "Cloudinary")
     if "secure_url" not in j:
         raise ApiError(f"Cloudinary: caricamento fallito ({j.get('error', {}).get('message')})")
@@ -86,6 +87,7 @@ def _normalize(x: dict) -> dict:
         "altezza": x.get("height"),
         "creato": x.get("created_at"),
         "formato": x.get("format"),
+        "durata": x.get("duration"),
     }
 
 

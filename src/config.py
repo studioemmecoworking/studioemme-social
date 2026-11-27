@@ -26,6 +26,7 @@ MAX_LATE_HOURS = 24              # oltre questo ritardo un post approvato non es
 CRITIC_MIN_SCORE = 7             # sotto questo voto il critico rimanda la bozza al redattore
 CRITIC_MAX_LOOPS = 2             # quante volte al massimo si corregge prima di mostrartela
 MAX_REVISIONS = 5                # modifiche richieste per ogni post
+MAX_PREPARE_ERRORS = 3           # dopo tanti errori di preparazione si ferma e aspetta /riprova
 M13_MAX_AGE_DAYS = 20            # la tabella disponibilita' non deve essere piu' vecchia
 
 ADDRESS = "Via Cardinal Ferrari 26 · Cavaria (VA)"

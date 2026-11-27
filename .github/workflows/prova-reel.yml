@@ -1,0 +1,44 @@
+name: Prova del montaggio reel
+
+# Monta un reel del calendario e te lo manda su Telegram come PROVA: non pubblica nulla e non cambia lo stato.
+# Si avvia a mano (Actions > Prova del montaggio reel > Run workflow) oppure cambiando il file prova/reel.txt.
+on:
+  workflow_dispatch:
+    inputs:
+      post:
+        description: "Id del post (la data, es. 2027-02-12). Vuoto = il prossimo reel del calendario"
+        required: false
+        default: ""
+  push:
+    paths:
+      - "prova/reel.txt"
+
+jobs:
+  prova:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: reel/package-lock.json
+      - run: pip install -r requirements.txt
+      - name: Monta il reel di prova
+        run: |
+          POST="${{ github.event.inputs.post }}"
+          if [ -z "$POST" ] && [ -f prova/reel.txt ]; then POST="$(head -n1 prova/reel.txt | tr -d '[:space:]')"; fi
+          python -m src.cli prova-reel "$POST"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

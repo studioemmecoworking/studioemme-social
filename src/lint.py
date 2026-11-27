@@ -39,6 +39,9 @@ def _texts(draft: dict):
         for key in ("sottotitolo", "etichetta", "testo", "titolo"):
             if s.get(key):
                 yield (f"slide {i + 1}", s[key], True)
+    for i, sc in enumerate((draft.get("reel") or {}).get("scene") or []):
+        for t in (sc.get("righe") or []) + ([sc["etichetta"]] if sc.get("etichetta") else []):
+            yield (f"scena {i + 1}", str(t), True)
     yield ("didascalia", draft.get("didascalia", ""), False)
 
 
@@ -50,9 +53,7 @@ def check(draft: dict, entry: dict, catalog: dict) -> list:
 
     # struttura
     if formato == "reel":
-        v = cat.by_sid(catalog, draft.get("video", ""))
-        if not v or v["tipo"] != "video":
-            errors.append("Per un reel serve il campo 'video' con l'id di un video dell'elenco.")
+        errors += check_reel(draft.get("reel"), entry, catalog)
         if slides:
             errors.append("Un reel non deve avere slide.")
     elif formato == "foto":
@@ -138,4 +139,90 @@ def check(draft: dict, entry: dict, catalog: dict) -> list:
     fin = [s for s in slides if s.get("tipo") == "finale"]
     if fin and fin[-1].get("prezzo") and not entry.get("prezzo"):
         errors.append("La slide finale mostra il prezzo ma il post non lo prevede.")
+    return errors
+
+
+def _scene_text_errors(i: int, sc: dict) -> list:
+    errors = []
+    righe = sc.get("righe") or []
+    if not 1 <= len(righe) <= 3:
+        errors.append(f"Scena {i + 1}: servono da 1 a 3 righe.")
+    for r in righe:
+        if len(str(r)) > 22:
+            errors.append(f"Scena {i + 1}: la riga '{str(r)[:20]}...' supera 20 caratteri.")
+    words = " ".join(str(r) for r in righe).split()
+    if len(words) > 7:
+        errors.append(f"Scena {i + 1}: troppe parole (massimo 6).")
+    acc = (sc.get("accento") or "").strip()
+    if acc and acc.lower() not in " ".join(str(r) for r in righe).lower():
+        errors.append(f"Scena {i + 1}: l'accento '{acc}' non compare nelle righe.")
+    if sc.get("etichetta") and len(sc["etichetta"]) > 32:
+        errors.append(f"Scena {i + 1}: etichetta troppo lunga (massimo 32 caratteri).")
+    return errors
+
+
+def check_reel(reel, entry: dict, catalog: dict) -> list:
+    """Controlli sulla scaletta del reel (vedi brand/montaggio.md)."""
+    if not isinstance(reel, dict):
+        return ["Per un reel serve il campo 'reel' con la scaletta del montaggio."]
+    errors = []
+    scenes = reel.get("scene") or []
+    tipo = reel.get("tipo")
+    if tipo == "parlato":
+        v = cat.by_sid(catalog, reel.get("video", ""))
+        if not v or v["tipo"] != "video":
+            errors.append("Reel parlato: serve 'video' con l'id di un video della libreria.")
+        elif v["persone"] and not entry.get("persone_ok"):
+            errors.append("Reel parlato: il video mostra persone ma il post non lo consente.")
+        if len(scenes) != 1:
+            errors.append("Reel parlato: serve una sola scena, il gancio.")
+        try:
+            da, a = float(reel.get("da") or 0), reel.get("a")
+            if a is not None and not 5 <= float(a) - da <= 90:
+                errors.append("Reel parlato: la parte scelta deve durare tra 5 e 90 secondi.")
+        except (TypeError, ValueError):
+            errors.append("Reel parlato: 'da' e 'a' devono essere numeri di secondi.")
+    elif tipo == "montaggio":
+        if not 4 <= len(scenes) <= 6:
+            errors.append("Il reel deve avere da 4 a 6 scene (gancio, idee, chiusura).")
+    else:
+        return ["Il campo reel.tipo deve essere 'montaggio' o 'parlato'."]
+    used, ai, prev_ai = [], 0, False
+    for i, sc in enumerate(scenes):
+        errors += _scene_text_errors(i, sc)
+        if i == 0 and any(PRICE_RE.search(str(r)) for r in sc.get("righe") or []):
+            errors.append("Il prezzo non puo' stare nel gancio.")
+        if tipo != "montaggio":
+            continue
+        shots = sc.get("inquadrature") or []
+        maxn = 3 if i in (0, len(scenes) - 1) else 2
+        if not 1 <= len(shots) <= maxn:
+            errors.append(f"Scena {i + 1}: servono da 1 a {maxn} inquadrature.")
+        for sh in shots:
+            if sh.get("ai"):
+                ai += 1
+                if prev_ai:
+                    errors.append(f"Scena {i + 1}: due immagini AI di fila; alternale con foto vere.")
+                prev_ai = True
+                if len(str(sh["ai"])) < 25:
+                    errors.append(f"Scena {i + 1}: descrivi meglio l'immagine AI (in inglese).")
+                continue
+            prev_ai = False
+            sid = sh.get("foto") or sh.get("video")
+            a = cat.by_sid(catalog, sid or "")
+            if not a or a["tipo"] not in ("foto", "video"):
+                errors.append(f"Scena {i + 1}: '{sid}' non e' nella libreria.")
+                continue
+            if sh.get("video") and a["tipo"] != "video":
+                errors.append(f"Scena {i + 1}: '{sid}' e' una foto, non un video.")
+            if sh.get("foto") and a["tipo"] != "foto":
+                errors.append(f"Scena {i + 1}: '{sid}' e' un video: usa il campo 'video'.")
+            if a["persone"] and not entry.get("persone_ok"):
+                errors.append(f"Scena {i + 1}: {sid} mostra persone riconoscibili.")
+            if a["tipo"] == "foto":
+                used.append(sid)
+    if tipo == "montaggio" and ai > 4:
+        errors.append("Troppe immagini AI: massimo 4 per reel.")
+    if len(used) != len(set(used)):
+        errors.append("La stessa foto e' usata piu' volte nel reel.")
     return errors

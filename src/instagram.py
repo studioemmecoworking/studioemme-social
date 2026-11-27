@@ -61,8 +61,25 @@ def publish_carousel(image_urls: list, caption: str) -> dict:
     return _publish(carousel)
 
 
-def publish_reel(video_url: str, caption: str) -> dict:
-    c = _post(f"{config.IG_USER_ID}/media", media_type="REELS", video_url=video_url,
-              caption=caption, share_to_feed="true")["id"]
+def publish_reel(video_url: str, caption: str, cover_url: str = None, ai: bool = False) -> dict:
+    """ai=True applica l'etichetta "Info sull'AI" (parametro is_ai_generated). Se Instagram non lo accetta,
+    pubblica senza e lo segnala, cosi' il titolare la aggiunge dall'app."""
+    fields = {"media_type": "REELS", "video_url": video_url, "caption": caption, "share_to_feed": "true"}
+    if cover_url:
+        fields["cover_url"] = cover_url
+    missing_label = False
+    if ai:
+        try:
+            c = _post(f"{config.IG_USER_ID}/media", **fields, is_ai_generated="true")["id"]
+        except ApiError as e:
+            if "is_ai_generated" not in str(e):
+                raise
+            missing_label = True
+            c = _post(f"{config.IG_USER_ID}/media", **fields)["id"]
+    else:
+        c = _post(f"{config.IG_USER_ID}/media", **fields)["id"]
     _wait(c, timeout=1200, step=10)
-    return _publish(c)
+    res = _publish(c)
+    if missing_label:
+        res["etichetta_ai_mancante"] = True
+    return res

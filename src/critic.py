@@ -52,18 +52,37 @@ def _image_block(img) -> dict:
     return {"type": "image", "source": {"type": "url", "url": img}}
 
 
-def review(entry: dict, draft: dict, image_urls: list, brief: str):
-    """Restituisce il giudizio, oppure None se il critico non e' riuscito (il post prosegue comunque)."""
+REEL_CRITIC_RULES = """
+Questo contenuto e' un REEL gia' montato, non un carosello: al posto dei punti 2 e 3 della scheda usa le
+regole di montaggio qui sotto. Le immagini sono fotogrammi del video: il primo e' il fotogramma iniziale (che fa
+anche da copertina), poi uno per ogni scena e l'ultimo e' la schermata finale. Controlla che il gancio si legga
+gia' nel primo fotogramma, che le scritte siano brevi, accattivanti e leggibili, che le immagini AI diano solo
+contesto e non sembrino lo studio, che non ci siano scritte o persone inventate nelle immagini AI, che le foto
+siano belle e varie. Nelle "istruzioni" indica cosa cambiare nella scaletta (scene, righe, inquadrature con id
+o descrizione AI): il redattore riscrive la scaletta e il programma rimonta il video.
+"""
+
+
+def review(entry: dict, draft: dict, image_urls: list, brief: str, outline: str = ""):
+    """Restituisce il giudizio, oppure None se il critico non e' riuscito (il post prosegue comunque).
+    Per i reel image_urls sono i fotogrammi del video montato (byte) e outline la scaletta in parole."""
     try:
         rules = CRITIC_PATH.read_text(encoding="utf-8")
+        is_reel = entry.get("formato") == "reel"
+        if is_reel:
+            montaggio = (config.ROOT / "brand" / "montaggio.md").read_text(encoding="utf-8")
+            rules += REEL_CRITIC_RULES + "\nREGOLE DI MONTAGGIO\n" + montaggio
         spec = {k: entry.get(k) for k in ("data", "linea", "formato", "tema", "obiettivo", "prezzo", "note")}
+        shown = draft.get("reel") if is_reel else draft.get("slides")
         text = "\n\n".join([
             f"BRIEF DEL BRAND\n{brief}",
             f"POST\n{json.dumps(spec, ensure_ascii=False)}",
-            f"TESTI DELLE SLIDE (JSON)\n{json.dumps(draft.get('slides', draft.get('video')), ensure_ascii=False)}",
+            f"{'SCALETTA DEL REEL' if is_reel else 'TESTI DELLE SLIDE'} (JSON)\n{json.dumps(shown, ensure_ascii=False)}",
+            f"SCALETTA IN PAROLE\n{outline}" if outline else "",
             f"DIDASCALIA\n{draft.get('didascalia', '')}",
-            "Qui sotto ci sono le slide gia' disegnate, nell'ordine di uscita." if image_urls
-            else "Questo e' un reel: valuta solo i testi, il video non e' visibile.",
+            ("Qui sotto ci sono i fotogrammi del reel, nell'ordine." if is_reel else
+             "Qui sotto ci sono le slide gia' disegnate, nell'ordine di uscita.") if image_urls
+            else "Il contenuto visivo non e' disponibile: valuta solo i testi.",
         ])
         content = [{"type": "text", "text": text}] + [_image_block(u) for u in image_urls]
         return _judge(rules, content)

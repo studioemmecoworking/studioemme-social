@@ -70,7 +70,7 @@ class Env:
         mp.setattr(cloudinary_api, "search_library", lambda folder=None: list(self.library))
         mp.setattr(cloudinary_api, "upload_bytes",
                    lambda data, pid, rt="image": {"secure_url": f"https://cdn/{pid}.jpg", "public_id": pid})
-        mp.setattr(cloudinary_api, "destroy", lambda pid, rt="image": self.destroyed.append(pid))
+        mp.setattr(cloudinary_api, "destroy", lambda pid, resource_type="image": self.destroyed.append(pid))
         mp.setattr(claude_api, "classify_image", lambda url: {
             "descrizione": "foto di prova", "soggetto": "studio3", "qualita": 4, "persone": False, "verticale": False})
         mp.setattr(claude_api, "write_draft", self._write)

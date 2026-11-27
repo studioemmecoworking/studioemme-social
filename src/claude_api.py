@@ -85,11 +85,11 @@ REGOLE DURE (un controllo automatico le verifica, se le violi la bozza viene sca
 FORMATO DI RISPOSTA: SOLO un JSON, senza altro testo, con questi campi:
 {
   "slides": [ ... ],
-  "video": "<id del video, solo per i reel>",
+  "reel": { ... solo per i reel, vedi sotto ... },
   "didascalia": "...",
   "note_per_utente": "una riga, oppure stringa vuota"
 }
-Tipi di slide ammessi (per "carosello" da 6 a 10 slide: copertina, slide 2 che regge da sola e spiega perche' interessa, una idea per slide, penultima slide di tipo "testo" con il RIEPILOGO salvabile, ultima "finale" con un solo invito; per "foto" una sola slide di tipo copertina o foto; per "reel" nessuna slide):
+Tipi di slide ammessi (per "carosello" da 6 a 10 slide: copertina, slide 2 che regge da sola e spiega perche' interessa, una idea per slide, penultima slide di tipo "testo" con il RIEPILOGO salvabile, ultima "finale" con un solo invito; per "foto" una sola slide di tipo copertina o foto; per "reel" nessuna slide, c'e' il campo "reel"):
  {"tipo":"copertina","foto":"F001","righe":["IL TUO STUDIO,","PRONTO ALL'USO"],"sottotitolo":"..."}   (righe: 1-3, max 22 caratteri l'una; sottotitolo max 60)
  {"tipo":"foto","foto":"F002","etichetta":"STUDIO 3","testo":"Lettino elettrico, luce naturale"}   (etichetta max 18, testo max 40)
  {"tipo":"testo","titolo":"...","punti":["...","..."]}   (titolo max 50; da 2 a 5 punti, max 70 caratteri l'uno)
@@ -118,7 +118,10 @@ def write_draft(entry: dict, brief: str, photos: list, videos: list, evidence: l
         "FOTO DISPONIBILI (id | soggetto | qualita' | orientamento | descrizione)\n" + _asset_lines(photos),
     ]
     if videos:
-        parts.append("VIDEO DISPONIBILI (id | nome)\n" + "\n".join(f"{v['sid']} | {v['nome']}" for v in videos))
+        parts.append("VIDEO DISPONIBILI (id | nome | durata in secondi)\n" + "\n".join(
+            f"{v['sid']} | {v['nome']} | {round(v['durata']) if v.get('durata') else '?'}" for v in videos))
+    if entry.get("formato") == "reel":
+        parts.append(reel_rules())
     if entry.get("materiale"):
         parts.append("Materiale richiesto dal piano (usalo in priorita'): " + ", ".join(entry["materiale"]))
     if previous:
@@ -134,3 +137,39 @@ def write_draft(entry: dict, brief: str, photos: list, videos: list, evidence: l
         content.append({"type": "text", "text": "Le immagini qui sopra sono materiale da leggere "
                         "(per esempio la tabella delle disponibilita'): usa solo cio' che e' scritto."})
     return extract_json(ask(WRITER_RULES, content, max_tokens=3500))
+
+
+REEL_RULES = """
+REEL: non scrivi slide ma la SCALETTA del montaggio nel campo "reel". Il programma monta il video da solo
+seguendo le regole di montaggio qui sotto (zoom, transizioni, musica, schermata finale con l'invito: non scriverla).
+
+Due tipi di reel:
+1) "montaggio" (quasi sempre): foto e video dello studio con scritte animate e musica.
+ {"tipo":"montaggio","scene":[
+   {"etichetta":"PER PROFESSIONISTI DELLA SALUTE","righe":["3 motivi per","scegliere","Studio Emme"],"accento":"3 motivi",
+    "inquadrature":[{"foto":"F012"},{"ai":"a warm close-up of an open paper agenda on a white desk with a green plant"}]},
+   {"etichetta":"MOTIVO 1","righe":["Stanze pronte","all'uso"],"accento":"pronte","inquadrature":[{"foto":"F020"},{"video":"F041","da":2}]},
+   ...]}
+ - da 4 a 6 scene: la prima e' il gancio (si legge gia' nel primo fotogramma), l'ultima e' la frase di chiusura.
+ - ogni scena: "righe" da 1 a 3, massimo 20 caratteri l'una e 6 parole in tutto; "accento" = una parola o due
+   presenti nelle righe; "etichetta" facoltativa, maiuscola, massimo 32 caratteri.
+ - ogni scena ha 1 o 2 "inquadrature" (il gancio e la scena finale anche 3). Ogni inquadratura e' UNA di:
+   {"foto":"<id>"} foto della libreria (preferisci quelle verticali e di qualita' alta, mai la stessa due volte);
+   {"video":"<id>","da":<secondo di partenza>} spezzone di un video della libreria;
+   {"ai":"<descrizione IN INGLESE dell'immagine>"} immagine generata con l'AI, SOLO per dare contesto
+   (un'agenda, una stazione ferroviaria di paese, una porta che si chiude, un dettaglio di lavoro, un parcheggio):
+   mai stanze, lettini, sale d'attesa o facciate al posto di quelle vere, mai persone, mai scritte.
+   Da 2 a 4 immagini AI per reel, alternate alle foto vere, mai due di fila.
+2) "parlato": quando il materiale e' un video in cui una persona parla in camera (per esempio "video parlato").
+ {"tipo":"parlato","video":"<id del video>","da":0,"a":45,"scene":[{"etichetta":"...","righe":["..."],"accento":"..."}]}
+ - una sola scena: il gancio, mostrato nei primi 3 secondi. "da"/"a" in secondi: massimo 90 secondi in tutto.
+Le scritte seguono tutte le regole dure (parole vietate, niente prezzo se non previsto, mai prezzo nel gancio).
+"""
+
+
+def reel_rules() -> str:
+    path = config.ROOT / "brand" / "montaggio.md"
+    try:
+        return REEL_RULES + "\nREGOLE DI MONTAGGIO\n" + path.read_text(encoding="utf-8")
+    except OSError:
+        return REEL_RULES

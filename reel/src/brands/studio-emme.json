@@ -1,0 +1,74 @@
+{
+ "slug": "studio-emme",
+ "name": "Studio Emme",
+ "tagline": "Coworking per professionisti della salute · Cavaria (VA)",
+ "colors": {
+  "primary": "#2E6B55",
+  "accent": "#86CFAE",
+  "light": "#F4F8F5",
+  "text_on_primary": "#FFFFFF",
+  "text_on_accent": "#000000",
+  "extra": {
+   "marker": "#86CFAE",
+   "ink": "#14201B",
+   "muted": "#41544B"
+  }
+ },
+ "fonts": {
+  "heading": {
+   "family": "Anton",
+   "source": "local",
+   "weights": [
+    400,
+    600,
+    700,
+    800,
+    900
+   ],
+   "files": []
+  },
+  "body": {
+   "family": "Inter",
+   "source": "local",
+   "weights": [
+    400,
+    500,
+    600,
+    700,
+    800
+   ],
+   "files": []
+  }
+ },
+ "logos": {
+  "on_dark": "brands/studio-emme/logo_bianco_pulito.png",
+  "on_light": "brands/studio-emme/logo_verde_pulito.png",
+  "mark_on_dark": "brands/studio-emme/logo_bianco_pulito.png",
+  "mark_on_light": "brands/studio-emme/logo_verde_pulito.png"
+ },
+ "motion": "calm",
+ "tone": {
+  "preset": "warm",
+  "label": "Warm, caring",
+  "loudness": "calm",
+  "overshoot": false,
+  "shake": false,
+  "scene_tone": "calm",
+  "scene_tones": [
+   "calm",
+   "feature",
+   "cinematic"
+  ],
+  "full_scenes_max": 1,
+  "transitions": [
+   "cut",
+   "fade",
+   "slide"
+  ],
+  "flash_max": 0,
+  "whip_max": 0,
+  "sfx": "sparse"
+ },
+ "subtitles_default": "accent",
+ "style_default": "marker"
+}

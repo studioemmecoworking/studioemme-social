@@ -29,6 +29,7 @@ Repository > Settings > Secrets and variables > Actions > New repository secret:
 | CLOUDINARY_API_SECRET | dashboard Cloudinary > API Keys |
 | TELEGRAM_BOT_TOKEN | BotFather |
 | TELEGRAM_CHAT_ID | si ottiene scrivendo `/start` al bot (risponde con il numero) |
+| GEMINI_API_KEY | aistudio.google.com/apikey (immagini AI dei reel, con fatturazione attiva) |
 
 I segreti non vanno mai scritti nei file né in chat.
 
@@ -37,6 +38,31 @@ I segreti non vanno mai scritti nei file né in chat.
 1. Actions > "Ciclo" > Run workflow.
 2. Scrivi `/start` al bot Telegram, copia il numero in `TELEGRAM_CHAT_ID`.
 3. Rilancia il ciclo: arriva la prima anteprima.
+
+## Reel montati in automatico
+
+I reel non usano più un video così com'è: il programma li monta seguendo `brand/montaggio.md`
+(standard: il reel «3 motivi», versione 4).
+
+1. Claude scrive la scaletta: scene con le scritte e, per ognuna, le inquadrature (foto e video della libreria,
+   più 2-4 immagini AI di contesto generate con Google Gemini).
+2. `src/reel.py` monta il video: zoom lento sulle foto, transizioni sempre diverse, scritte e schermata finale
+   con Remotion (cartella `reel/`), copertina sul primo fotogramma, musica a -14 LUFS.
+3. Il critico guarda i fotogrammi; sotto 7 la scaletta viene corretta e il reel rimontato (massimo 2 volte).
+4. Su Telegram arrivano il video, la scaletta e i pulsanti. Alla pubblicazione il reel ha la copertina e,
+   se contiene immagini AI, l'etichetta «Info sull'AI».
+
+La musica sta su Cloudinary, cartella `libreria`, con il nome che inizia per `MUSICA` (più brani = si alternano).
+Non va nel repository, che è pubblico.
+
+Reel «parlati» (una persona che parla in camera): il programma tiene la voce, aggiunge il gancio nei primi
+3 secondi e la schermata finale. I sottotitoli automatici non ci sono ancora.
+
+**Prova senza pubblicare:** Actions > "Prova del montaggio reel" > Run workflow (scrivi la data del post,
+oppure lascia vuoto per il prossimo reel). Il video arriva su Telegram come PROVA.
+
+Il motore di montaggio (`reel/src/kit`) viene dal plugin IT Reelsmaker (licenza MIT, `reel/LICENSE-kit.txt`).
+Remotion è gratuito per persone singole e aziende fino a 3 persone.
 
 ## Comandi Telegram
 

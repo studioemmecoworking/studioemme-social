@@ -3,7 +3,7 @@ prepara le nuove bozze e ti avvisa se manca del materiale."""
 from datetime import date, datetime, timedelta
 
 from . import catalog as cat
-from . import claude_api, cloudinary_api, config, critic, instagram, lint, render, telegram_api as tg
+from . import claude_api, cloudinary_api, config, critic, instagram, lint, reel, render, telegram_api as tg
 from .util import ApiError, http, load_json, redact, save_json
 
 STATE_PATH = config.ROOT / "stato" / "stato.json"
@@ -57,8 +57,9 @@ def missing_materials(entry: dict, catalog: dict) -> list:
     """Elenco di codici mancanti, con indicazione del tipo (foto o video)."""
     missing = []
     for code in entry.get("materiale", []):
-        tipo = "video" if entry["formato"] == "reel" else "foto"
-        found = cat.with_code(catalog, code, tipo)
+        # nei reel montati vanno bene sia i video sia le foto con il codice richiesto
+        tipo = None if entry["formato"] == "reel" else "foto"
+        found = [a for a in cat.with_code(catalog, code, tipo) if a["tipo"] != "audio"]
         if code == "M13":
             found = [a for a in found if cat.age_days(a) <= config.M13_MAX_AGE_DAYS]
         if not found:
@@ -110,10 +111,7 @@ def make_draft(entry: dict, catalog: dict, instruction: str = "", previous: dict
 def build_assets(entry: dict, draft: dict, catalog: dict, version) -> dict:
     """Crea le immagini (o sceglie il video), le carica e restituisce gli indirizzi pubblici."""
     if entry["formato"] == "reel":
-        v = cat.by_sid(catalog, draft["video"])
-        url = cloudinary_api.transform_url(v["url"], "f_mp4,vc_h264,ac_aac")
-        preview = cloudinary_api.transform_url(v["url"], "f_mp4,vc_h264,ac_aac,c_limit,w_480,q_auto:low")
-        return {"video": url, "anteprima_video": preview, "immagini": [], "public_ids": []}
+        return reel.build(entry, draft, catalog, version)
     photo_bytes = {}
     for s in draft["slides"]:
         if s["tipo"] in ("copertina", "foto") and s["foto"] not in photo_bytes:
@@ -135,12 +133,15 @@ def send_preview(entry: dict, draft: dict, assets: dict, review: dict = None, ro
            f"{config.PUBLISH_TIME[0]}:{config.PUBLISH_TIME[1]:02d}"
     if assets["immagini"]:
         tg.send_photos(assets["immagini"])
-    elif assets["anteprima_video"]:
-        try:
-            tg.send_video(assets["anteprima_video"], "Video scelto per il reel")
-        except ApiError:
-            tg.send_message("Anteprima del video: " + assets["anteprima_video"])
+    elif assets.get("video"):
+        send_reel_video(assets)
     text = f"{head}\n\nDidascalia:\n{draft['didascalia']}"
+    if assets.get("scaletta"):
+        text += f"\n\nScaletta del montaggio:\n{assets['scaletta']}"
+    if assets.get("ai"):
+        text += "\n\nContiene immagini generate con l'AI: alla pubblicazione il reel viene segnato come contenuto AI."
+    for n in assets.get("note_montaggio") or []:
+        text += f"\nNota sul montaggio: {n}"
     if draft.get("note_per_utente"):
         text += f"\n\nDa controllare: {draft['note_per_utente']}"
     if review:
@@ -155,13 +156,32 @@ def send_preview(entry: dict, draft: dict, assets: dict, review: dict = None, ro
     return msg["message_id"]
 
 
+def send_reel_video(assets: dict, caption: str = "Il reel montato") -> None:
+    for url in (assets["video"], assets.get("anteprima_video")):
+        if not url:
+            continue
+        try:
+            tg.send_video(url, caption)
+            return
+        except ApiError:
+            continue
+    tg.send_message("Il video è troppo pesante per Telegram, lo vedi qui: " + assets["video"])
+
+
+def _review(entry: dict, draft: dict, assets: dict, brief: str):
+    if entry["formato"] == "reel":
+        return critic.review(entry, draft, assets.get("fotogrammi") or [], brief,
+                             outline=assets.get("scaletta", ""))
+    return critic.review(entry, draft, assets["immagini"], brief)
+
+
 def refine(entry: dict, catalog: dict, draft: dict, assets: dict, version: int):
     """Il critico guarda la bozza gia' disegnata e, se il voto e' basso, la fa correggere (al massimo
     CRITIC_MAX_LOOPS volte). Restituisce (bozza, grafiche, giudizio, giri) della versione migliore."""
     brief = BRIEF_PATH.read_text(encoding="utf-8")
     tried = []          # (bozza, grafiche, giudizio)
     for i in range(config.CRITIC_MAX_LOOPS + 1):
-        review = critic.review(entry, draft, assets["immagini"], brief)
+        review = _review(entry, draft, assets, brief)
         tried.append((draft, assets, review))
         if review is None or review["punteggio"] >= config.CRITIC_MIN_SCORE or i == config.CRITIC_MAX_LOOPS \
                 or not review["istruzioni"]:
@@ -197,7 +217,8 @@ def prepare_entry(state: dict, catalog: dict, entry: dict, instruction: str = ""
     draft, assets, review, rounds = refine(entry, catalog, draft, assets, version)
     old_ids = ps.get("public_ids", [])
     ps.update({"bozza": draft, "immagini": assets["immagini"], "video": assets["video"],
-               "public_ids": assets["public_ids"], "stato": "bozza_inviata",
+               "copertina": assets.get("copertina", ""), "ai": bool(assets.get("ai")),
+               "public_ids": assets["public_ids"], "stato": "bozza_inviata", "errori": 0,
                "critico": {"punteggio": review["punteggio"], "giudizio": review["giudizio"],
                            "giri": rounds} if review else None})
     ps["messaggio"] = send_preview(entry, draft, assets, review, rounds)
@@ -206,8 +227,11 @@ def prepare_entry(state: dict, catalog: dict, entry: dict, instruction: str = ""
 
 
 def _safe_destroy(pid: str) -> None:
+    kind = "image"
+    if pid.startswith("video:"):
+        kind, pid = "video", pid[len("video:"):]
     try:
-        cloudinary_api.destroy(pid)
+        cloudinary_api.destroy(pid, resource_type=kind)
     except ApiError:
         pass
 
@@ -244,8 +268,14 @@ def prepare_due(state: dict, catalog: dict) -> None:
         try:
             prepare_entry(state, catalog, entry)
         except ApiError as e:
-            ps["stato"] = "pianificato"
-            tg.send_message(f"Errore nel preparare {label(entry)}: {redact(e)}. Riprovo tra poco.")
+            ps["errori"] = ps.get("errori", 0) + 1
+            if ps["errori"] >= config.MAX_PREPARE_ERRORS:
+                ps["stato"] = "errore_bozza"
+                tg.send_message(f"Non riesco a preparare {label(entry)} ({redact(e)}). Mi fermo per non "
+                                f"sprecare tentativi: quando vuoi riprovare scrivi /riprova {entry['id']}.")
+            else:
+                ps["stato"] = "pianificato"
+                tg.send_message(f"Errore nel preparare {label(entry)}: {redact(e)}. Riprovo tra poco.")
 
 
 def publish_due(state: dict) -> None:
@@ -270,7 +300,8 @@ def publish_entry(state: dict, entry: dict) -> None:
     draft = ps["bozza"]
     try:
         if entry["formato"] == "reel":
-            res = instagram.publish_reel(ps["video"], draft["didascalia"])
+            res = instagram.publish_reel(ps["video"], draft["didascalia"], cover_url=ps.get("copertina") or None,
+                                         ai=bool(ps.get("ai")))
         elif entry["formato"] == "foto":
             res = instagram.publish_image(ps["immagini"][0], draft["didascalia"])
         else:
@@ -290,7 +321,11 @@ def publish_entry(state: dict, entry: dict) -> None:
     ps["pubblicato_il"] = config.now().isoformat()
     for pid in ps.get("public_ids", []):
         _safe_destroy(pid)
-    tg.send_message(f"Pubblicato: {label(entry)}\n{res['link']}")
+    extra = ""
+    if res.get("etichetta_ai_mancante"):
+        extra = ("\nInstagram non ha accettato l'etichetta AI dal programma: aggiungila dall'app "
+                 "(modifica il post, Impostazioni avanzate, Etichetta AI).")
+    tg.send_message(f"Pubblicato: {label(entry)}\n{res['link']}{extra}")
 
 
 # ---------------------------------------------------------------- Telegram
@@ -371,6 +406,7 @@ def handle_message(state: dict, catalog: dict, m: dict) -> None:
         eid = text.partition(" ")[2].strip()
         if entry_by_id(eid):
             post_state(state, eid)["stato"] = "pianificato"
+            post_state(state, eid)["errori"] = 0
             tg.send_message("Va bene, riprovo.")
 
 
@@ -450,3 +486,43 @@ def remind() -> None:
     tg.send_message(text)
     cat.save(catalog)
     save_state(state)
+
+
+# ---------------------------------------------------------------- prova del montaggio
+
+def trial_reel(entry_id: str = "") -> None:
+    """Monta un reel del calendario e lo manda su Telegram come PROVA: niente pulsanti, niente
+    pubblicazione, lo stato dei post non cambia."""
+    catalog = cat.load()
+    try:
+        cat.sync(catalog)
+    except ApiError as e:
+        print("Avviso:", redact(e))
+    reels = [e for e in calendar() if e["formato"] == "reel"]
+    today = config.now().date()
+    entry = entry_by_id(entry_id) if entry_id else next(
+        (e for e in reels if date.fromisoformat(e["data"]) >= today), reels[0] if reels else None)
+    if not entry or entry["formato"] != "reel":
+        print("Nessun reel da provare con questo id.")
+        return
+    tg.send_message(f"PROVA del montaggio automatico per {label(entry)}. Non verrà pubblicato: "
+                    "serve solo per vedere il risultato. Ci vogliono alcuni minuti.")
+    try:
+        draft = make_draft(entry, catalog)
+        assets = build_assets(entry, draft, catalog, "prova")
+        draft, assets, review, rounds = refine(entry, catalog, draft, assets, 0)
+    except (DraftError, ApiError) as e:
+        tg.send_message(f"PROVA non riuscita: {redact(e)}")
+        raise
+    send_reel_video(assets, "PROVA: il reel montato")
+    text = f"PROVA, {label(entry)}\n\nScaletta del montaggio:\n{assets.get('scaletta', '')}"
+    if assets.get("ai"):
+        text += "\n\nContiene immagini AI: alla pubblicazione verrebbe segnato come contenuto AI."
+    for n in assets.get("note_montaggio") or []:
+        text += f"\nNota sul montaggio: {n}"
+    if review:
+        corr = f" (corretto {rounds} {'volta' if rounds == 1 else 'volte'})" if rounds else ""
+        text += f"\n\nGiudizio del critico: {review['punteggio']}/10{corr}. {review['giudizio']}"
+    text += f"\n\nDidascalia:\n{draft['didascalia']}\n\nCopertina: {assets.get('copertina', '')}"
+    tg.send_message(text)
+    print("Reel di prova:", assets["video"])

@@ -1,4 +1,4 @@
-"""Comandi: python -m src.cli tick | remind | sync"""
+"""Comandi: python -m src.cli tick | remind | sync | prova-reel [id del post]"""
 import sys
 
 from . import catalog as cat
@@ -16,8 +16,10 @@ def main(argv):
         n = cat.sync(c)
         cat.save(c)
         print(f"Libreria sincronizzata: {n} elementi nuovi, {len(c['assets'])} in tutto.")
+    elif cmd == "prova-reel":
+        pipeline.trial_reel(argv[2].strip() if len(argv) > 2 else "")
     else:
-        print("Comando sconosciuto. Usa: tick, remind, sync")
+        print("Comando sconosciuto. Usa: tick, remind, sync, prova-reel")
         return 2
     return 0
 

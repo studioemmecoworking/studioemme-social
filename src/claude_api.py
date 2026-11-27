@@ -136,7 +136,24 @@ def write_draft(entry: dict, brief: str, photos: list, videos: list, evidence: l
     if evidence:
         content.append({"type": "text", "text": "Le immagini qui sopra sono materiale da leggere "
                         "(per esempio la tabella delle disponibilita'): usa solo cio' che e' scritto."})
-    return extract_json(ask(WRITER_RULES, content, max_tokens=3500))
+    return ask_json(WRITER_RULES, content, max_tokens=5000 if entry.get("formato") == "reel" else 3500)
+
+
+FIX_JSON = ("Correggi questo testo perche' sia un JSON valido (virgole, virgolette, parentesi), senza cambiare "
+            "il contenuto. Rispondi SOLO con il JSON corretto.")
+
+
+def ask_json(system: str, content: list, max_tokens: int) -> dict:
+    """Chiede un JSON a Claude; se arriva rovinato, gli chiede una volta di correggerlo."""
+    text = ask(system, content, max_tokens=max_tokens)
+    try:
+        return extract_json(text)
+    except ApiError as first:
+        start = text.find("{")
+        if start < 0:
+            raise first
+        fixed = ask(FIX_JSON, [{"type": "text", "text": text[start:]}], max_tokens=max_tokens)
+        return extract_json(fixed)
 
 
 REEL_RULES = """

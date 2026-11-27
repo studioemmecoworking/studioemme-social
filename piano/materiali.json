@@ -1,58 +1,70 @@
 {
-  "M13": {
-    "nome": "Tabella disponibilità aggiornata",
-    "come": "Foto o schermata dell'agenda, come quella che mi hai mandato; da rifare ogni inizio mese."
-  },
-  "M5": {
-    "nome": "Lettino elettrico dello Studio 3 in movimento",
-    "come": "Video verticale di 10-15 secondi: il lettino che si alza e si abbassa."
-  },
-  "M7": {
-    "nome": "5-8 foto di dettaglio",
-    "come": "Pianta, quadro, lavabo, carta del lettino, sedia, vetrofania; luce naturale, inquadratura ravvicinata."
-  },
-  "M3": {
-    "nome": "Video tour dello studio",
-    "come": "Verticale 9:16, 25-30 secondi, camminando piano: ingresso, sala d'attesa, Studio 1, Studio 3."
-  },
-  "M6": {
-    "nome": "Nuove inquadrature degli studi e della sala d'attesa",
-    "come": "Foto verticali con angoli diversi da quelli già fatti, a due ore diverse (mattina e fine pomeriggio)."
-  },
-  "M16": {
-    "nome": "Video parlato \"Perché ho creato Studio Emme\"",
-    "come": "Verticale, 40-60 secondi, in studio con luce naturale."
-  },
-  "M1": {
-    "nome": "Facciata e ingresso",
-    "come": "Foto verticale di giorno, con le vetrofanie visibili e il portone."
-  },
-  "M4": {
-    "nome": "Foto di strada e parcheggio e video del percorso dalla stazione",
-    "come": "Foto della strada e dei posti auto; video verticale camminando dalla stazione allo studio, 30-40 secondi."
-  },
-  "M2": {
-    "nome": "Ingresso di sera con le luci accese",
-    "come": "Foto verticale dopo il tramonto, con la luce dello studio accesa."
-  },
-  "M12": {
-    "nome": "Preparazione della stanza",
-    "come": "Video verticale di 15-20 secondi: apri la porta, apri le finestre, accendi il climatizzatore, stendi la carta sul lettino."
-  },
-  "M11": {
-    "nome": "Frasi dei professionisti sullo studio",
-    "come": "Una schermata o una foto con una o due frasi di chi lavora qui, con il loro consenso scritto a usarle."
-  },
-  "M14": {
-    "nome": "Logo con sfondo trasparente (PNG)",
-    "come": "Facoltativo: se non c'è uso il logo attuale."
-  },
-  "M17": {
-    "nome": "Foto tua e di Cristiana in studio",
-    "come": "3-5 foto, anche mentre lavorate o prendete un caffè in sala d'attesa; luce naturale, inquadrature naturali (non in posa rigida)."
-  },
-  "M18": {
-    "nome": "Video parlato \"Due nutrizionisti nello stesso studio\"",
-    "come": "Verticale, 40-60 secondi, tu e Cristiana: come vi siete trovati, perché lavorare insieme senza concorrenza è un vantaggio per chi arriva."
-  }
+ "M13": {
+  "nome": "Tabella disponibilità aggiornata",
+  "come": "Foto o schermata dell'agenda, come quella che mi hai mandato; da rifare ogni inizio mese."
+ },
+ "M5": {
+  "nome": "Lettino elettrico dello Studio 3 in movimento",
+  "come": "Video verticale di 10-15 secondi: il lettino che si alza e si abbassa."
+ },
+ "M7": {
+  "nome": "5-8 foto di dettaglio",
+  "come": "Pianta, quadro, lavabo, carta del lettino, sedia, vetrofania; luce naturale, inquadratura ravvicinata."
+ },
+ "M3": {
+  "nome": "Video tour dello studio",
+  "come": "Verticale 9:16, 25-30 secondi, camminando piano: ingresso, sala d'attesa, Studio 1, Studio 3. Le stesse riprese servono anche per i reel del 12 febbraio e del 23 marzo."
+ },
+ "M6": {
+  "nome": "Nuove inquadrature degli studi e della sala d'attesa",
+  "come": "Foto verticali con angoli diversi da quelli già fatti, a due ore diverse (mattina e fine pomeriggio). Aggiungi 3-4 clip video di 5 secondi dello Studio 1 (per il reel del 16 marzo)."
+ },
+ "M16": {
+  "nome": "Video parlato \"Perché ho creato Studio Emme\"",
+  "come": "Verticale, 40-60 secondi, in studio con luce naturale."
+ },
+ "M1": {
+  "nome": "Facciata e ingresso",
+  "come": "Foto verticale di giorno, con le vetrofanie visibili e il portone."
+ },
+ "M4": {
+  "nome": "Foto di strada e parcheggio e video del percorso dalla stazione",
+  "come": "Foto della strada e dei posti auto; video verticale camminando dalla stazione allo studio, 30-40 secondi."
+ },
+ "M2": {
+  "nome": "Ingresso di sera con le luci accese",
+  "come": "Foto verticale dopo il tramonto, con la luce dello studio accesa."
+ },
+ "M12": {
+  "nome": "Preparazione della stanza",
+  "come": "Video verticale di 15-20 secondi: apri la porta, apri le finestre, accendi il climatizzatore, stendi la carta sul lettino."
+ },
+ "M11": {
+  "nome": "Frasi dei professionisti sullo studio",
+  "come": "Una schermata o una foto con una o due frasi di chi lavora qui, con il loro consenso scritto a usarle."
+ },
+ "M14": {
+  "nome": "Logo con sfondo trasparente (PNG)",
+  "come": "Facoltativo: se non c'è uso il logo attuale."
+ },
+ "M17": {
+  "nome": "Foto tua e di Cristiana in studio",
+  "come": "3-5 foto, anche mentre lavorate o prendete un caffè in sala d'attesa; luce naturale, inquadrature naturali (non in posa rigida)."
+ },
+ "M18": {
+  "nome": "Video parlato \"Due nutrizionisti nello stesso studio\"",
+  "come": "Verticale, 40-60 secondi, tu e Cristiana: come vi siete trovati, perché lavorare insieme senza concorrenza è un vantaggio per chi arriva."
+ },
+ "M19": {
+  "nome": "Sala d'attesa: video breve",
+  "come": "Video verticale 15-20 secondi: la porta di uno studio che si chiude, la radio accesa, la sala d'attesa ampia e luminosa."
+ },
+ "M20": {
+  "nome": "Video dell'osteopata dello studio",
+  "come": "Verticale 30-40 secondi, con il suo consenso scritto: perche' ha scelto di lavorare in uno studio condiviso, come si trova. Niente consigli di salute."
+ },
+ "M21": {
+  "nome": "Video della psicologa dello studio",
+  "come": "Verticale 30-40 secondi, con il suo consenso scritto: com'e' lavorare in una stanza tranquilla per i colloqui. In alternativa solo la stanza, senza volto."
+ }
 }

@@ -18,8 +18,8 @@
   "tema": "Dal primo contatto alla prima giornata: i passi fino all'appuntamento per visitare lo studio",
   "obiettivo": "reclutamento",
   "materiale": [],
-  "prezzo": true,
-  "note": "Chiusura d'anno: chi sta pianificando il 2027."
+  "prezzo": false,
+  "note": "Chiusura d'anno: chi sta pianificando il 2027. Nessun prezzo: basta l'invito a prendere un appuntamento per visitare lo studio."
  },
  {
   "id": "2027-01-05",
@@ -160,14 +160,15 @@
   "id": "2027-02-12",
   "data": "2027-02-12",
   "linea": "Vita dello studio",
-  "formato": "foto",
-  "tema": "Un dettaglio dello studio: luce, piante, ordine",
-  "obiettivo": "brand",
+  "formato": "reel",
+  "tema": "Tre motivi per scegliere Studio Emme (nuova versione del reel piu' visto)",
+  "obiettivo": "valore",
   "materiale": [
+   "M3",
    "M7"
   ],
   "prezzo": false,
-  "note": ""
+  "note": "Rifacimento del reel di febbraio 2025 (2.797 riproduzioni) con le riprese nuove del tour e i dettagli. Tre motivi concreti: stanze pronte all'uso, orari flessibili, 600 m dalla stazione."
  },
  {
   "id": "2027-02-16",
@@ -184,25 +185,27 @@
   "id": "2027-02-19",
   "data": "2027-02-19",
   "linea": "Gli spazi",
-  "formato": "carosello",
+  "formato": "reel",
   "tema": "La sala d'attesa condivisa: porte nuove, radio e spazi ampi per la riservatezza",
   "obiettivo": "valore",
-  "materiale": [],
+  "materiale": [
+   "M19"
+  ],
   "prezzo": false,
-  "note": "Dire con misura, senza promettere che non si senta nulla."
+  "note": "Reel breve: porta che si chiude, radio accesa, sala ampia. Dire con misura: quasi nulla si sente fuori, senza promettere isolamento acustico."
  },
  {
   "id": "2027-02-23",
   "data": "2027-02-23",
-  "linea": "Vita dello studio",
-  "formato": "carosello",
-  "tema": "Due nutrizionisti, un solo studio: come lavoriamo insieme senza farci concorrenza",
-  "obiettivo": "brand",
+  "linea": "Per chi è",
+  "formato": "reel",
+  "tema": "Conosciamo l'osteopata che lavora da Studio Emme: perche' ha scelto uno studio condiviso",
+  "obiettivo": "valore",
   "materiale": [
-   "M17"
+   "M20"
   ],
   "prezzo": false,
-  "note": "",
+  "note": "Solo con il consenso scritto dell'osteopata (nome solo se lo autorizza). Parla del lavorare nello studio, non di salute per i pazienti. Se il consenso non arriva: reel con te e Cristiana su come si lavora in studio.",
   "persone_ok": true
  },
  {
@@ -224,7 +227,8 @@
   "tema": "Due nutrizionisti nello stesso studio (video parlato)",
   "obiettivo": "dietro le quinte",
   "materiale": [
-   "M18"
+   "M18",
+   "M17"
   ],
   "prezzo": false,
   "note": "",
@@ -255,20 +259,22 @@
  {
   "id": "2027-03-12",
   "data": "2027-03-12",
-  "linea": "Gli spazi",
-  "formato": "foto",
-  "tema": "Lo studio in primavera: luce naturale a ogni ora",
-  "obiettivo": "brand",
-  "materiale": [],
+  "linea": "Per chi è",
+  "formato": "reel",
+  "tema": "Una psicologa in coworking: com'e' lavorare in una stanza tranquilla",
+  "obiettivo": "valore",
+  "materiale": [
+   "M21"
+  ],
   "prezzo": false,
-  "note": ""
+  "note": "Solo con il consenso scritto della psicologa; senza consenso niente nome ne' volto: reel con voce fuori campo del titolare su una stanza per i colloqui. Mai la psicologa con camicia azzurra (non lavora piu' qui)."
  },
  {
   "id": "2027-03-16",
   "data": "2027-03-16",
   "linea": "Gli spazi",
-  "formato": "carosello",
-  "tema": "Studio 1 in dettaglio: raccolto, una finestra, lavabo in stanza",
+  "formato": "reel",
+  "tema": "Studio 1 in 20 secondi: raccolto, una finestra, lavabo in stanza",
   "obiettivo": "valore",
   "materiale": [
    "M6"
@@ -293,12 +299,16 @@
   "id": "2027-03-23",
   "data": "2027-03-23",
   "linea": "Vita dello studio",
-  "formato": "carosello",
-  "tema": "Una giornata tipo in studio: dalla sala d'attesa alla stanza, senza mostrare persone",
+  "formato": "reel",
+  "tema": "Una giornata in studio dal mattino alla sera, senza mostrare persone",
   "obiettivo": "brand",
-  "materiale": [],
+  "materiale": [
+   "M12",
+   "M3",
+   "M2"
+  ],
   "prezzo": false,
-  "note": ""
+  "note": "Montaggio delle clip gia' girate: apertura, sala d'attesa, stanza pronta, ingresso di sera."
  },
  {
   "id": "2027-03-26",

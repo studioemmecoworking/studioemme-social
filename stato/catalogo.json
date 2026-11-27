@@ -810,6 +810,24 @@
       "url": "https://res.cloudinary.com/davwtxfu/image/upload/v1795688850/persone_uomo-camice-bianco-scrivania_49.jpg",
       "verticale": false
     },
+    "c1e87303c1ab82c3a1e6d6f55a5effbb": {
+      "altezza": 0,
+      "asset_id": "c1e87303c1ab82c3a1e6d6f55a5effbb",
+      "codice": null,
+      "creato": "2026-11-27T15:30:06+00:00",
+      "descrizione": "musica ambient",
+      "durata": 86.047344,
+      "larghezza": 0,
+      "nome": "musica ambient",
+      "persone": false,
+      "public_id": "musica",
+      "qualita": 3,
+      "sid": "F063",
+      "soggetto": "altro",
+      "tipo": "audio",
+      "url": "https://res.cloudinary.com/davwtxfu/video/upload/v1795793406/musica.mp3",
+      "verticale": false
+    },
     "c3452d184b9ebe7046ca4154236806bb": {
       "altezza": 1333,
       "asset_id": "c3452d184b9ebe7046ca4154236806bb",
@@ -1117,5 +1135,5 @@
       "verticale": false
     }
   },
-  "prossimo_id": 63
+  "prossimo_id": 64
 }

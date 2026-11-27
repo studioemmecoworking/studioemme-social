@@ -169,7 +169,7 @@
    {
     "layout": "domanda",
     "titolo": "PICCOLA O GRANDE?",
-    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
     "sticker": {
      "tipo": "sondaggio",
      "domanda": "Quale stanza preferisci?",
@@ -192,14 +192,11 @@
   "frames": [
    {
     "layout": "domanda",
-    "titolo": "LAVORI CON IL LETTINO O IN COLLOQUIO?",
+    "titolo": "COSA VORRESTI SAPERE SU COME FUNZIONA?",
+    "sottotitolo": "Le risposte finiscono nell'evidenza «Come funziona»",
     "sticker": {
-     "tipo": "sondaggio",
-     "domanda": "Lavori con il...",
-     "opzioni": [
-      "Lettino",
-      "Colloquio"
-     ]
+     "tipo": "domanda",
+     "testo": "Cosa vorresti sapere?"
     }
    }
   ]
@@ -285,7 +282,7 @@
    {
     "layout": "domanda",
     "titolo": "LA PRIMA COSA CHE FAI QUANDO ENTRI?",
-    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
     "sticker": {
      "tipo": "domanda",
      "testo": "La prima cosa che fai in stanza?"
@@ -348,7 +345,7 @@
    {
     "layout": "domanda",
     "titolo": "STUDIO TUO O CONDIVISO?",
-    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
     "sticker": {
      "tipo": "sondaggio",
      "domanda": "Studio tuo o condiviso?",
@@ -356,6 +353,26 @@
       "Tutto mio",
       "Condiviso"
      ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-02-01-dis",
+  "data": "2027-02-01",
+  "ora": "09:30",
+  "tipo": "rubrica",
+  "nome": "Disponibilita' del mese",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "MEZZE GIORNATE LIBERE A FEBBRAIO",
+    "sottotitolo": "Scrivici per vedere lo studio, senza impegno",
+    "sticker": {
+     "tipo": "link",
+     "testo": "Scrivici"
     }
    }
   ]
@@ -372,7 +389,7 @@
    {
     "layout": "domanda",
     "titolo": "IL LETTINO ELETTRICO CE L'HAI?",
-    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
     "sticker": {
      "tipo": "sondaggio",
      "domanda": "Lettino elettrico?",
@@ -464,6 +481,30 @@
   ]
  },
  {
+  "id": "S-2027-02-12-gan",
+  "data": "2027-02-12",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-02-12",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "COSA TI FAREBBE SCEGLIERE UNO STUDIO?",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
+    "sticker": {
+     "tipo": "sondaggio",
+     "domanda": "Conta di piu'...",
+     "opzioni": [
+      "La stanza",
+      "Gli orari"
+     ]
+    }
+   }
+  ]
+ },
+ {
   "id": "S-2027-02-16-gan",
   "data": "2027-02-16",
   "ora": "12:30",
@@ -522,7 +563,7 @@
    {
     "layout": "domanda",
     "titolo": "SALA D'ATTESA: RADIO O SILENZIO?",
-    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
     "sticker": {
      "tipo": "sondaggio",
      "domanda": "In sala d'attesa...",
@@ -545,11 +586,11 @@
   "frames": [
    {
     "layout": "domanda",
-    "titolo": "DUE NUTRIZIONISTI, UNA DOMANDA",
-    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "titolo": "PERCHÉ UN'OSTEOPATA SCEGLIE UN COWORKING?",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
     "sticker": {
      "tipo": "domanda",
-     "testo": "Chiedi ai due nutrizionisti"
+     "testo": "Secondo te perché?"
     }
    }
   ]
@@ -597,6 +638,46 @@
       "Alle 8",
       "Dopo le 18"
      ]
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-01-dis",
+  "data": "2027-03-01",
+  "ora": "09:30",
+  "tipo": "rubrica",
+  "nome": "Disponibilita' del mese",
+  "consegna": "manuale",
+  "post": null,
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "MEZZE GIORNATE LIBERE A MARZO",
+    "sottotitolo": "Scrivici per vedere lo studio, senza impegno",
+    "sticker": {
+     "tipo": "link",
+     "testo": "Scrivici"
+    }
+   }
+  ]
+ },
+ {
+  "id": "S-2027-03-02-gan",
+  "data": "2027-03-02",
+  "ora": "12:30",
+  "tipo": "gancio",
+  "nome": "Gancio del post delle 18:30",
+  "consegna": "manuale",
+  "post": "2027-03-02",
+  "frames": [
+   {
+    "layout": "domanda",
+    "titolo": "DUE NUTRIZIONISTI, UNA DOMANDA",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
+    "sticker": {
+     "tipo": "domanda",
+     "testo": "Chiedi ai due nutrizionisti"
     }
    }
   ]
@@ -718,7 +799,7 @@
    {
     "layout": "domanda",
     "titolo": "UNA FINESTRA O DUE?",
-    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
     "sticker": {
      "tipo": "sondaggio",
      "domanda": "Una finestra o due?",
@@ -789,7 +870,7 @@
    {
     "layout": "domanda",
     "titolo": "COSA CAMBIERESTI NELLA TUA GIORNATA IN STUDIO?",
-    "sottotitolo": "Stasera alle 18:30 nuovo post",
+    "sottotitolo": "Stasera alle 18:30 nuovo reel",
     "sticker": {
      "tipo": "domanda",
      "testo": "Scrivilo qui"

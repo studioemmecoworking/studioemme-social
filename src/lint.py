@@ -130,8 +130,8 @@ def check(draft: dict, entry: dict, catalog: dict) -> list:
                 if "a partire da" not in low or not ("al mese" in low or "mensil" in low):
                     errors.append(f"{where}: il prezzo va scritto come 'a partire da 180 € al mese'.")
         m = re.search(r"cardinal ferrari\D{0,6}(\d+)", low)
-        if m and m.group(1) != "26":
-            errors.append(f"{where}: numero civico sbagliato (e' il 26).")
+        if m and m.group(1) != "168":
+            errors.append(f"{where}: numero civico sbagliato (e' il 168).")
     if slides:
         if slides[0].get("tipo") == "copertina" and any(
                 PRICE_RE.search(str(x)) for x in (slides[0].get("righe") or []) + [slides[0].get("sottotitolo", "")]):

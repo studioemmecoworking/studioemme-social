@@ -32,7 +32,7 @@ def good_draft(price=False):
                "Ognuno lavora in autonomia, con i propri pazienti. Puoi scegliere mezze giornate o giornate "
                "intere, con orari flessibili dal mattino presto alla sera tardi. La stazione è a 600 metri a "
                "piedi e il parcheggio in zona è comodo. Vuoi vedere lo studio? Scrivici in direct.\n\n"
-               "Via Cardinal Ferrari 26, Cavaria (VA)\n\n"
+               "Via Cardinal Ferrari 168, Cavaria (VA)\n\n"
                "#coworking #studioincondivisione #professionistisalute #osteopati #cavaria")
     return {
         "slides": [

@@ -1,324 +1,324 @@
 [
- {
-  "id": "2026-12-22",
-  "data": "2026-12-22",
-  "linea": "Vita dello studio",
-  "formato": "foto",
-  "tema": "Auguri di buone feste da Studio Emme",
-  "obiettivo": "brand",
-  "materiale": [],
-  "prezzo": false,
-  "note": "Foto luminosa dello studio, un solo augurio breve, nessuna offerta."
- },
- {
-  "id": "2026-12-30",
-  "data": "2026-12-30",
-  "linea": "Come funziona",
-  "formato": "carosello",
-  "tema": "Dal primo contatto alla prima giornata: i passi fino all'appuntamento per visitare lo studio",
-  "obiettivo": "reclutamento",
-  "materiale": [],
-  "prezzo": false,
-  "note": "Chiusura d'anno: chi sta pianificando il 2027. Nessun prezzo: basta l'invito a prendere un appuntamento per visitare lo studio."
- },
- {
-  "id": "2027-01-05",
-  "data": "2027-01-05",
-  "linea": "Consigli per professionisti",
-  "formato": "carosello",
-  "tema": "Nuova agenda, nuovo anno: 5 cose da mettere in ordine nella tua attivita' di libero professionista",
-  "obiettivo": "utilita",
-  "materiale": [],
-  "prezzo": false,
-  "note": "Solo organizzazione pratica (agenda, pause, spazio, comunicazione). Niente consigli fiscali, legali o sanitari. Il riepilogo e' la slide da salvare. Invito finale morbido."
- },
- {
-  "id": "2027-01-08",
-  "data": "2027-01-08",
-  "linea": "Disponibilità",
-  "formato": "carosello",
-  "tema": "Nuovo anno, nuove agende: ultime mezze giornate disponibili a gennaio",
-  "obiettivo": "reclutamento",
-  "materiale": [
-   "M13"
-  ],
-  "prezzo": false,
-  "note": "Usa solo la tabella delle disponibilita' fornita."
- },
- {
-  "id": "2027-01-12",
-  "data": "2027-01-12",
-  "linea": "Gli spazi",
-  "formato": "reel",
-  "tema": "Lo studio in 30 secondi",
-  "obiettivo": "valore",
-  "materiale": [
-   "M3"
-  ],
-  "prezzo": false,
-  "note": ""
- },
- {
-  "id": "2027-01-15",
-  "data": "2027-01-15",
-  "linea": "Per chi è",
-  "formato": "carosello",
-  "tema": "Fisioterapisti, osteopati, massaggiatori: tutto pronto per lavorare con il lettino",
-  "obiettivo": "reclutamento",
-  "materiale": [],
-  "prezzo": false,
-  "note": ""
- },
- {
-  "id": "2027-01-19",
-  "data": "2027-01-19",
-  "linea": "La zona",
-  "formato": "carosello",
-  "tema": "Come arrivare: stazione a 600 m a piedi e parcheggio in zona",
-  "obiettivo": "valore",
-  "materiale": [
-   "M4"
-  ],
-  "prezzo": false,
-  "note": "Solo la zona e il percorso del materiale, nessun locale o servizio inventato."
- },
- {
-  "id": "2027-01-22",
-  "data": "2027-01-22",
-  "linea": "Vita dello studio",
-  "formato": "reel",
-  "tema": "Come si prepara una stanza prima di iniziare la giornata",
-  "obiettivo": "dietro le quinte",
-  "materiale": [
-   "M12"
-  ],
-  "prezzo": false,
-  "note": ""
- },
- {
-  "id": "2027-01-26",
-  "data": "2027-01-26",
-  "linea": "Vita dello studio",
-  "formato": "carosello",
-  "tema": "Cosa dicono i professionisti che lavorano qui",
-  "obiettivo": "reclutamento",
-  "materiale": [
-   "M11"
-  ],
-  "prezzo": false,
-  "note": "Solo frasi realmente fornite, con consenso, senza nomi."
- },
- {
-  "id": "2027-01-29",
-  "data": "2027-01-29",
-  "linea": "Vita dello studio",
-  "formato": "reel",
-  "tema": "Perche' ho creato Studio Emme (video parlato del titolare)",
-  "obiettivo": "dietro le quinte",
-  "materiale": [
-   "M16"
-  ],
-  "prezzo": false,
-  "note": ""
- },
- {
-  "id": "2027-02-02",
-  "data": "2027-02-02",
-  "linea": "Gli spazi",
-  "formato": "reel",
-  "tema": "Studio 3: il lettino elettrico professionale in movimento",
-  "obiettivo": "valore",
-  "materiale": [
-   "M5"
-  ],
-  "prezzo": false,
-  "note": ""
- },
- {
-  "id": "2027-02-05",
-  "data": "2027-02-05",
-  "linea": "Come funziona",
-  "formato": "carosello",
-  "tema": "Il contratto semestrale spiegato semplice",
-  "obiettivo": "reclutamento",
-  "materiale": [],
-  "prezzo": true,
-  "note": ""
- },
- {
-  "id": "2027-02-09",
-  "data": "2027-02-09",
-  "linea": "Consigli per professionisti",
-  "formato": "carosello",
-  "tema": "Prima che entri il primo appuntamento della giornata: 6 cose da controllare nella stanza",
-  "obiettivo": "utilita",
-  "materiale": [],
-  "prezzo": false,
-  "note": "Checklist pratica su ordine, luce, temperatura, sala d'attesa, materiali. Nessun consiglio clinico. Invito finale morbido."
- },
- {
-  "id": "2027-02-12",
-  "data": "2027-02-12",
-  "linea": "Vita dello studio",
-  "formato": "reel",
-  "tema": "Tre motivi per scegliere Studio Emme (nuova versione del reel piu' visto)",
-  "obiettivo": "valore",
-  "materiale": [
-   "M3",
-   "M7"
-  ],
-  "prezzo": false,
-  "note": "Rifacimento del reel di febbraio 2025 (2.797 riproduzioni) con le riprese nuove del tour e i dettagli. Tre motivi concreti: stanze pronte all'uso, orari flessibili, 600 m dalla stazione."
- },
- {
-  "id": "2027-02-16",
-  "data": "2027-02-16",
-  "linea": "Per chi è",
-  "formato": "carosello",
-  "tema": "Psicologi, ostetriche e altre professioni della salute: una stanza tranquilla, a giornate o mezze giornate",
-  "obiettivo": "reclutamento",
-  "materiale": [],
-  "prezzo": false,
-  "note": ""
- },
- {
-  "id": "2027-02-19",
-  "data": "2027-02-19",
-  "linea": "Gli spazi",
-  "formato": "reel",
-  "tema": "La sala d'attesa condivisa: porte nuove, radio e spazi ampi per la riservatezza",
-  "obiettivo": "valore",
-  "materiale": [
-   "M19"
-  ],
-  "prezzo": false,
-  "note": "Reel breve: porta che si chiude, radio accesa, sala ampia. Dire con misura: quasi nulla si sente fuori, senza promettere isolamento acustico."
- },
- {
-  "id": "2027-02-23",
-  "data": "2027-02-23",
-  "linea": "Per chi è",
-  "formato": "reel",
-  "tema": "Conosciamo l'osteopata che lavora da Studio Emme: perche' ha scelto uno studio condiviso",
-  "obiettivo": "valore",
-  "materiale": [
-   "M20"
-  ],
-  "prezzo": false,
-  "note": "Solo con il consenso scritto dell'osteopata (nome solo se lo autorizza). Parla del lavorare nello studio, non di salute per i pazienti. Se il consenso non arriva: reel con te e Cristiana su come si lavora in studio.",
-  "persone_ok": true
- },
- {
-  "id": "2027-02-26",
-  "data": "2027-02-26",
-  "linea": "Come funziona",
-  "formato": "carosello",
-  "tema": "Orari flessibili: tre giornate tipo, dal mattino presto alla sera tardi",
-  "obiettivo": "reclutamento",
-  "materiale": [],
-  "prezzo": false,
-  "note": ""
- },
- {
-  "id": "2027-03-02",
-  "data": "2027-03-02",
-  "linea": "Vita dello studio",
-  "formato": "reel",
-  "tema": "Due nutrizionisti nello stesso studio (video parlato)",
-  "obiettivo": "dietro le quinte",
-  "materiale": [
-   "M18",
-   "M17"
-  ],
-  "prezzo": false,
-  "note": "",
-  "persone_ok": true
- },
- {
-  "id": "2027-03-05",
-  "data": "2027-03-05",
-  "linea": "Consigli per professionisti",
-  "formato": "carosello",
-  "tema": "Pausa pranzo di chi lavora in studio: 5 idee semplici da preparare prima",
-  "obiettivo": "utilita",
-  "materiale": [],
-  "prezzo": false,
-  "note": "Contenuto del titolare (nutrizionista): idee pratiche e generiche per professionisti, nessuna indicazione a pazienti, nessuna promessa. Verifica i contenuti prima di approvare."
- },
- {
-  "id": "2027-03-09",
-  "data": "2027-03-09",
-  "linea": "Per chi è",
-  "formato": "carosello",
-  "tema": "Medici per consulenze: una stanza pronta quando serve",
-  "obiettivo": "reclutamento",
-  "materiale": [],
-  "prezzo": false,
-  "note": ""
- },
- {
-  "id": "2027-03-12",
-  "data": "2027-03-12",
-  "linea": "Per chi è",
-  "formato": "reel",
-  "tema": "Una psicologa in coworking: com'e' lavorare in una stanza tranquilla",
-  "obiettivo": "valore",
-  "materiale": [
-   "M21"
-  ],
-  "prezzo": false,
-  "note": "Solo con il consenso scritto della psicologa; senza consenso niente nome ne' volto: reel con voce fuori campo del titolare su una stanza per i colloqui. Mai la psicologa con camicia azzurra (non lavora piu' qui)."
- },
- {
-  "id": "2027-03-16",
-  "data": "2027-03-16",
-  "linea": "Gli spazi",
-  "formato": "reel",
-  "tema": "Studio 1 in 20 secondi: raccolto, una finestra, lavabo in stanza",
-  "obiettivo": "valore",
-  "materiale": [
-   "M6"
-  ],
-  "prezzo": false,
-  "note": ""
- },
- {
-  "id": "2027-03-19",
-  "data": "2027-03-19",
-  "linea": "Come funziona",
-  "formato": "carosello",
-  "tema": "Vieni a vedere lo studio: come prenotare l'appuntamento, con le mezze giornate libere di aprile",
-  "obiettivo": "reclutamento",
-  "materiale": [
-   "M13"
-  ],
-  "prezzo": true,
-  "note": "Usa solo la tabella delle disponibilita' aggiornata."
- },
- {
-  "id": "2027-03-23",
-  "data": "2027-03-23",
-  "linea": "Vita dello studio",
-  "formato": "reel",
-  "tema": "Una giornata in studio dal mattino alla sera, senza mostrare persone",
-  "obiettivo": "brand",
-  "materiale": [
-   "M12",
-   "M3",
-   "M2"
-  ],
-  "prezzo": false,
-  "note": "Montaggio delle clip gia' girate: apertura, sala d'attesa, stanza pronta, ingresso di sera."
- },
- {
-  "id": "2027-03-26",
-  "data": "2027-03-26",
-  "linea": "Vita dello studio",
-  "formato": "foto",
-  "tema": "Auguri di buona Pasqua da Studio Emme",
-  "obiettivo": "brand",
-  "materiale": [],
-  "prezzo": false,
-  "note": "Un solo augurio breve, nessuna offerta."
- }
+  {
+    "id": "2026-12-22",
+    "data": "2026-12-22",
+    "linea": "Vita dello studio",
+    "formato": "foto",
+    "tema": "Auguri di buone feste da Studio Emme",
+    "obiettivo": "brand",
+    "materiale": [],
+    "prezzo": false,
+    "note": "Foto luminosa dello studio, un solo augurio breve, nessuna offerta."
+  },
+  {
+    "id": "2026-12-30",
+    "data": "2026-12-30",
+    "linea": "Come funziona",
+    "formato": "carosello",
+    "tema": "Dal primo contatto alla prima giornata: i passi fino all'appuntamento per visitare lo studio",
+    "obiettivo": "reclutamento",
+    "materiale": [],
+    "prezzo": false,
+    "note": "Chiusura d'anno: chi sta pianificando il 2027. Nessun prezzo: basta l'invito a prendere un appuntamento per visitare lo studio. Invito: scrivi in direct oppure dal sito (link in bio), una volta sola."
+  },
+  {
+    "id": "2027-01-05",
+    "data": "2027-01-05",
+    "linea": "Consigli per professionisti",
+    "formato": "carosello",
+    "tema": "Nuova agenda, nuovo anno: 5 cose da mettere in ordine nella tua attivita' di libero professionista",
+    "obiettivo": "utilita",
+    "materiale": [],
+    "prezzo": false,
+    "note": "Solo organizzazione pratica (agenda, pause, spazio, comunicazione). Niente consigli fiscali, legali o sanitari. Il riepilogo e' la slide da salvare. Invito finale morbido."
+  },
+  {
+    "id": "2027-01-08",
+    "data": "2027-01-08",
+    "linea": "Disponibilità",
+    "formato": "carosello",
+    "tema": "Nuovo anno, nuove agende: ultime mezze giornate disponibili a gennaio",
+    "obiettivo": "reclutamento",
+    "materiale": [
+      "M13"
+    ],
+    "prezzo": false,
+    "note": "Usa solo la tabella delle disponibilita' fornita. Invito: scrivi in direct oppure dal sito (link in bio), una volta sola."
+  },
+  {
+    "id": "2027-01-12",
+    "data": "2027-01-12",
+    "linea": "Gli spazi",
+    "formato": "reel",
+    "tema": "Lo studio in 30 secondi",
+    "obiettivo": "valore",
+    "materiale": [
+      "M3"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-01-15",
+    "data": "2027-01-15",
+    "linea": "Per chi è",
+    "formato": "carosello",
+    "tema": "Fisioterapisti, osteopati, massaggiatori: tutto pronto per lavorare con il lettino",
+    "obiettivo": "reclutamento",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-01-19",
+    "data": "2027-01-19",
+    "linea": "La zona",
+    "formato": "carosello",
+    "tema": "Come arrivare: stazione a 600 m a piedi e parcheggio in zona",
+    "obiettivo": "valore",
+    "materiale": [
+      "M4"
+    ],
+    "prezzo": false,
+    "note": "Solo la zona e il percorso del materiale, nessun locale o servizio inventato."
+  },
+  {
+    "id": "2027-01-22",
+    "data": "2027-01-22",
+    "linea": "Vita dello studio",
+    "formato": "reel",
+    "tema": "Come si prepara una stanza prima di iniziare la giornata",
+    "obiettivo": "dietro le quinte",
+    "materiale": [
+      "M12"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-01-26",
+    "data": "2027-01-26",
+    "linea": "Vita dello studio",
+    "formato": "carosello",
+    "tema": "Cosa dicono i professionisti che lavorano qui",
+    "obiettivo": "reclutamento",
+    "materiale": [
+      "M11"
+    ],
+    "prezzo": false,
+    "note": "Solo frasi realmente fornite, con consenso, senza nomi."
+  },
+  {
+    "id": "2027-01-29",
+    "data": "2027-01-29",
+    "linea": "Vita dello studio",
+    "formato": "reel",
+    "tema": "Perche' ho creato Studio Emme (video parlato del titolare)",
+    "obiettivo": "dietro le quinte",
+    "materiale": [
+      "M16"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-02-02",
+    "data": "2027-02-02",
+    "linea": "Gli spazi",
+    "formato": "reel",
+    "tema": "Studio 3: il lettino elettrico professionale in movimento",
+    "obiettivo": "valore",
+    "materiale": [
+      "M5"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-02-05",
+    "data": "2027-02-05",
+    "linea": "Come funziona",
+    "formato": "carosello",
+    "tema": "Il contratto semestrale spiegato semplice",
+    "obiettivo": "reclutamento",
+    "materiale": [],
+    "prezzo": true,
+    "note": " Invito: scrivi in direct oppure dal sito (link in bio), una volta sola."
+  },
+  {
+    "id": "2027-02-09",
+    "data": "2027-02-09",
+    "linea": "Consigli per professionisti",
+    "formato": "carosello",
+    "tema": "Prima che entri il primo appuntamento della giornata: 6 cose da controllare nella stanza",
+    "obiettivo": "utilita",
+    "materiale": [],
+    "prezzo": false,
+    "note": "Checklist pratica su ordine, luce, temperatura, sala d'attesa, materiali. Nessun consiglio clinico. Invito finale morbido."
+  },
+  {
+    "id": "2027-02-12",
+    "data": "2027-02-12",
+    "linea": "Vita dello studio",
+    "formato": "reel",
+    "tema": "Tre motivi per scegliere Studio Emme (nuova versione del reel piu' visto)",
+    "obiettivo": "valore",
+    "materiale": [
+      "M3",
+      "M7"
+    ],
+    "prezzo": false,
+    "note": "Rifacimento del reel di febbraio 2025 (2.797 riproduzioni) con le riprese nuove del tour e i dettagli. Tre motivi concreti: stanze pronte all'uso, orari flessibili, 600 m dalla stazione."
+  },
+  {
+    "id": "2027-02-16",
+    "data": "2027-02-16",
+    "linea": "Per chi è",
+    "formato": "carosello",
+    "tema": "Psicologi, ostetriche e altre professioni della salute: una stanza tranquilla, a giornate o mezze giornate",
+    "obiettivo": "reclutamento",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-02-19",
+    "data": "2027-02-19",
+    "linea": "Gli spazi",
+    "formato": "reel",
+    "tema": "La sala d'attesa condivisa: porte nuove, radio e spazi ampi per la riservatezza",
+    "obiettivo": "valore",
+    "materiale": [
+      "M19"
+    ],
+    "prezzo": false,
+    "note": "Reel breve: porta che si chiude, radio accesa, sala ampia. Dire con misura: quasi nulla si sente fuori, senza promettere isolamento acustico."
+  },
+  {
+    "id": "2027-02-23",
+    "data": "2027-02-23",
+    "linea": "Per chi è",
+    "formato": "reel",
+    "tema": "Conosciamo l'osteopata che lavora da Studio Emme: perche' ha scelto uno studio condiviso",
+    "obiettivo": "valore",
+    "materiale": [
+      "M20"
+    ],
+    "prezzo": false,
+    "note": "Solo con il consenso scritto dell'osteopata (nome solo se lo autorizza). Parla del lavorare nello studio, non di salute per i pazienti. Se il consenso non arriva: reel con te e Cristiana su come si lavora in studio.",
+    "persone_ok": true
+  },
+  {
+    "id": "2027-02-26",
+    "data": "2027-02-26",
+    "linea": "Come funziona",
+    "formato": "carosello",
+    "tema": "Orari flessibili: tre giornate tipo, dal mattino presto alla sera tardi",
+    "obiettivo": "reclutamento",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-03-02",
+    "data": "2027-03-02",
+    "linea": "Vita dello studio",
+    "formato": "reel",
+    "tema": "Due nutrizionisti nello stesso studio (video parlato)",
+    "obiettivo": "dietro le quinte",
+    "materiale": [
+      "M18",
+      "M17"
+    ],
+    "prezzo": false,
+    "note": "",
+    "persone_ok": true
+  },
+  {
+    "id": "2027-03-05",
+    "data": "2027-03-05",
+    "linea": "Consigli per professionisti",
+    "formato": "carosello",
+    "tema": "Pausa pranzo di chi lavora in studio: 5 idee semplici da preparare prima",
+    "obiettivo": "utilita",
+    "materiale": [],
+    "prezzo": false,
+    "note": "Contenuto del titolare (nutrizionista): idee pratiche e generiche per professionisti, nessuna indicazione a pazienti, nessuna promessa. Verifica i contenuti prima di approvare."
+  },
+  {
+    "id": "2027-03-09",
+    "data": "2027-03-09",
+    "linea": "Per chi è",
+    "formato": "carosello",
+    "tema": "Medici per consulenze: una stanza pronta quando serve",
+    "obiettivo": "reclutamento",
+    "materiale": [],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-03-12",
+    "data": "2027-03-12",
+    "linea": "Per chi è",
+    "formato": "reel",
+    "tema": "Una psicologa in coworking: com'e' lavorare in una stanza tranquilla",
+    "obiettivo": "valore",
+    "materiale": [
+      "M21"
+    ],
+    "prezzo": false,
+    "note": "Solo con il consenso scritto della psicologa; senza consenso niente nome ne' volto: reel con voce fuori campo del titolare su una stanza per i colloqui. Mai la psicologa con camicia azzurra (non lavora piu' qui)."
+  },
+  {
+    "id": "2027-03-16",
+    "data": "2027-03-16",
+    "linea": "Gli spazi",
+    "formato": "reel",
+    "tema": "Studio 1 in 20 secondi: raccolto, una finestra, lavabo in stanza",
+    "obiettivo": "valore",
+    "materiale": [
+      "M6"
+    ],
+    "prezzo": false,
+    "note": ""
+  },
+  {
+    "id": "2027-03-19",
+    "data": "2027-03-19",
+    "linea": "Come funziona",
+    "formato": "carosello",
+    "tema": "Vieni a vedere lo studio: come prenotare l'appuntamento, con le mezze giornate libere di aprile",
+    "obiettivo": "reclutamento",
+    "materiale": [
+      "M13"
+    ],
+    "prezzo": true,
+    "note": "Usa solo la tabella delle disponibilita' aggiornata. Invito: scrivi in direct oppure dal sito (link in bio), una volta sola."
+  },
+  {
+    "id": "2027-03-23",
+    "data": "2027-03-23",
+    "linea": "Vita dello studio",
+    "formato": "reel",
+    "tema": "Una giornata in studio dal mattino alla sera, senza mostrare persone",
+    "obiettivo": "brand",
+    "materiale": [
+      "M12",
+      "M3",
+      "M2"
+    ],
+    "prezzo": false,
+    "note": "Montaggio delle clip gia' girate: apertura, sala d'attesa, stanza pronta, ingresso di sera."
+  },
+  {
+    "id": "2027-03-26",
+    "data": "2027-03-26",
+    "linea": "Vita dello studio",
+    "formato": "foto",
+    "tema": "Auguri di buona Pasqua da Studio Emme",
+    "obiettivo": "brand",
+    "materiale": [],
+    "prezzo": false,
+    "note": "Un solo augurio breve, nessuna offerta."
+  }
 ]

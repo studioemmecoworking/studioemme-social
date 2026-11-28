@@ -23,8 +23,8 @@ Vanno scritti per primi nel giudizio.
 - Promesse sanitarie o sui risultati con i pazienti, anche indirette. Superlativi che non si possono
   dimostrare: "il migliore", "l'unico", "il più economico della zona".
 - Persone mostrate o nominate fuori dalle regole del brief. Testimonianze o citazioni non reali.
-- Numero di telefono o link nella didascalia o sulle slide (in didascalia i link non sono cliccabili:
-  il contatto passa dal canale indicato nel brief).
+- Numero di telefono o indirizzo web scritto per esteso nella didascalia o sulle slide (in didascalia i link
+  non sono cliccabili). Va bene "scrivici in direct" e "link in bio" (il sito è lì), una sola volta.
 - Una slide con testo illeggibile sul telefono (vedi punto 3).
 - Più di 5 hashtag: Instagram ne accetta al massimo 5 per post.
 

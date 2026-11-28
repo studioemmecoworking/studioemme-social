@@ -37,7 +37,7 @@ Le frasi dei professionisti (testimonianze scritte) si usano solo quando arrivan
 - Orari: massima flessibilità, dal mattino presto alla sera tardi, da concordare; esclusi sabato pomeriggio e domenica. Non importa se un professionista inizia molto presto o finisce tardi.
 
 ## Invito all'azione
-Un solo invito, sempre lo stesso: "Prendi un appuntamento per visitare lo studio, senza impegno" (scrivi in direct). Non dire "visita guidata". Per ora il contatto è il messaggio diretto su Instagram: non scrivere numeri di telefono.
+Un solo invito, sempre lo stesso: "Prendi un appuntamento per visitare lo studio, senza impegno" (scrivi in direct, oppure dal sito, link in bio). Non dire "visita guidata". Il contatto principale è il messaggio diretto su Instagram; in più c'è il sito studioemmecoworking.it, raggiungibile dal link in bio. Nelle didascalie e sulle slide non scrivere numeri di telefono né indirizzi web (nelle didascalie i link non sono cliccabili): dire "link in bio" al massimo una volta, nell'invito finale.
 
 ## Tono di voce
 Semplice, concreto, diretto: da collega a collega, con il "tu". Frasi corte, niente gergo da marketing e niente enfasi.

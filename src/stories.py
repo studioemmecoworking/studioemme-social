@@ -127,5 +127,5 @@ def sticker_help(frame: dict) -> str:
         ok = st["opzioni"][st["corretta"]]
         return f"Sticker Quiz: \"{st['domanda']}\" | {' / '.join(st['opzioni'])} (giusta: {ok})"
     if st["tipo"] == "link":
-        return f"Sticker Link: \"{st['testo']}\" (link a WhatsApp o alla prenotazione della visita)"
+        return f"Sticker Link: \"{st['testo']}\" (link al sito studioemmecoworking.it, dove si chiede la visita)"
     return f"Sticker Domande: \"{st['testo']}\""

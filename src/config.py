@@ -29,7 +29,7 @@ MAX_REVISIONS = 5                # modifiche richieste per ogni post
 MAX_PREPARE_ERRORS = 3           # dopo tanti errori di preparazione si ferma e aspetta /riprova
 M13_MAX_AGE_DAYS = 20            # la tabella disponibilita' non deve essere piu' vecchia
 
-ADDRESS = "Via Cardinal Ferrari 26 · Cavaria (VA)"
+ADDRESS = "Via Cardinal Ferrari 168 · Cavaria (VA)"
 PRICE_LINE = "A partire da 180 € al mese · contratti semestrali"
 HASHTAGS_BASE = [
     "#coworking", "#studioincondivisione", "#professionistisalute",

@@ -33,7 +33,7 @@ Le frasi dei professionisti (testimonianze scritte) si usano solo quando arrivan
 - Studio 3: la stanza più grande, due finestroni, lettino elettrico professionale, arredato e climatizzato.
 - Spazi comuni: sala d'attesa condivisa, antibagno con lavabo e armadietto.
 - Riservatezza: le porte NON sono insonorizzate (non scriverlo mai): sono porte normali ma nuove, quindi chiudono bene. Insieme alla radio in sala d'attesa e agli spazi ampi della sala, dagli studi si sente quasi nulla di quello che si dice. Dirlo con misura ("porte nuove, radio e sala ampia: quasi nulla si sente fuori"), senza promettere isolamento acustico.
-- Indirizzo: via Cardinal Ferrari 26, Cavaria (VA). Stazione ferroviaria a circa 600 metri a piedi, molto parcheggio nei dintorni.
+- Indirizzo: via Cardinal Ferrari 168, Cavaria (VA). Stazione ferroviaria a circa 600 metri a piedi, molto parcheggio nei dintorni.
 - Orari: massima flessibilità, dal mattino presto alla sera tardi, da concordare; esclusi sabato pomeriggio e domenica. Non importa se un professionista inizia molto presto o finisce tardi.
 
 ## Invito all'azione
